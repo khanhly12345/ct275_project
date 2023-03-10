@@ -8,7 +8,9 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../../libraries/source/font-awesome-4.7.0/css/font-awesome.min.css" /> 
+    <link rel="stylesheet" href="../../libraries/source/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" integrity="sha512-QfDd74mlg8afgSqm3Vq2Q65e9b3xMhJB4GZ9OcHDVy1hZ6pqBJPWWnMsKDXM7NINoKqJANNGBuVRIpIJ5dogfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
 </head>
 <body>
     <!-- header -->
@@ -44,33 +46,35 @@
 
                 </div>
                 <div class="col-3">
-                    <div class="wrap">
-                        <div class="icon">
-                            <p>icon</p>
+                    <div class="wrp">
+                        <div class="header-icon-truck">
+                            <i class="fa fa-truck fa-3x"></i>
                         </div>
-                        <div class="freeship">
-                            <p>miễn phí</p>
-                            <span>miễn phí </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="wrap">
-                        <div class="icon">
-
-                        </div>
-                        <div class="freeship">
-
+                        <div class="header-icon-freeship">
+                            <p1 style="color: #20c997;">Miễn phí vận chuyển</p1><br>
+                            <span>Với đơn hàng trên 1.000.000đ </span>
                         </div>
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="wrap">
-                        <div class="icon">
-
+                    <div class="wrp">
+                        <div class="header-icon-call">
+                            <i class="fa fa-phone-volume fa-3x"></i>
                         </div>
-                        <div class="freeship">
-
+                        <div class="header-icon-fastcall">
+                            <p1 style="color: #20c997;">Đặt hàng nhanh</p1><br>
+                            <span>Gọi ngay 19006750</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="wrp">
+                        <div class="header-icon-cart">
+                            <i class="fa fa-cart-plus fa-3x"></i>
+                        </div>
+                        <div class="header-icon-product">
+                            <p1 style="color: #20c997;">Đơn hàng</p1><br>
+                            <span style="font-size:small;">Sản phẩm</span>
                         </div>
                     </div>
                 </div>
@@ -80,27 +84,24 @@
     <!-- nav -->
     <nav class="nav">
         <div class="container">
-            <div class="row">
+            <div class="row-nav">
                 <div class="col-6 ">
-                    <ul class="nav_main">
-                        <li><a href="">Trang chủ</a>
-                        </li>
-                        <li><a href="">giới thiệu</a>
-                        </li>
-                        <li><a href="">Sản phẩm</a>
-                        </li>                        
-                        <li><a href="">tin tức</a>
-                        </li>
-                        <li><a href="">Liên hê</a>
-                        </li>
-                 
+                    <ul class="nav-after">
+                        <li><a href="">Trang chủ</a></li>
+                        <li><a href="">giới thiệu</a></li>
+                        <li><a href="">Sản phẩm</a></li>                        
+                        <li><a href="">tin tức</a></li>
+                        <li><a href="">Liên hệ</a></li>
                     </ul>
                 </div>
                 <div class="col-6">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                      </form>
+                    <div class="search">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search">
+                        </form>
+                        <form class="btn-search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button></div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -110,51 +111,110 @@
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    nav
+                    <div class="body-icon">
+                        <i class="fa fa-list fa-2x"></i>
+                      <a href="" style="text-decoration: none; color: #ffffff;"><p>Danh mục sản phẩm</p></a>  
+                        <br>
+                    </div>
+                    <div class="select">
+                            <li><a href="">Áo thun</a></li>
+                            <li><a href="">Áo phông</a></li> 
+                            <li><a href="">Áo sơ mi</a></li> 
+                            <li><a href="">Áo cộc tay</a></li> 
+                            <li><a href="">Sản phẩm mới</a></li> 
+                            <li><a href="">Xem thêm</a></li> 
+                    </div>
                 </div>
                 <div class="col-9">
-                    slide
+                <div id="slideshow">
+                    <div class="slide-wrapper">
+                        <div class="slide"><img style="width: 730px;height: 350px;" src="../images/img_body/photo-1483985988355-763728e1935b.jfif"></div>
+                        <div class="slide"><img style="width: 730px;height: 350px;" src="../images/img_body/mens-fashion-2021-awards-season.webp"></div>
+                        <div class="slide"><img style="width: 730px;height: 350px;" src="../images/img_body/new-800px-width-x-600px-height-landscape.jpg"></div>
+                    </div>
+                </div>
+
                 </div>
             </div>
         </div>
         <div class="container">
-            <h1>san pham moi nhat</h1>
-            <div class="row">
-                <div class="col-3">4</div>
-                <div class="col-3">4</div>
-                <div class="col-3">4</div>
-                <div class="col-3">4</div>
-            </div>
-            <div class="row">
-                <div class="col-3">4</div>
-                <div class="col-3">4</div>
-                <div class="col-3">4</div>
-                <div class="col-3">4</div>
-            </div>
+            <h1>Sản phẩm mới nhất</h1>
+            <div class="row row-clothers">
+                <div class="col-3">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                </div>
+                <div class="col-3">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>      
+                </div>
+                <div class="col-3">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                </div>
+                <div class="col-3">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>   
+                </div>
+            </div><br>
+            <div class="row row-clothers">
+                <div class="col-3">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>                            
+                </div>
+                <div class="col-3">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>                  
+                </div>
+                <div class="col-3">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>                   
+                </div>
+                <div class="col-3">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>              
+                </div>
+            </div><br>
         </div>
-    </body>
+    </body><hr>
     <!-- footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    a
+                    <img src="../images/img_footer/logo_footer.webp" alt="">
                 </div>
                 <div class="col-8">
                     <div class="row">
-                        <div class="col-3">a</div>
-                        <div class="col-3">a</div>
-                        <div class="col-3">a</div>
-                        <div class="col-3">a</div>  
+                        <div class="col-3">TÀI KHOẢN</div>
+                        <div class="col-3">CHÍNH SÁCH</div>
+                        <div class="col-3">ĐIỀU KHOẢN</div>
+                        <div class="col-3">HƯỚNG DẪN</div>  
                     </div>  
+                    
                 </div>
             </div>
         </div>
-        <hr>
+        
         <div class="container">
-                <div class="row">
+                <div class="row row-footer">
                     <div class="col-6">a</div>
                     <div class="col-6">a</div>
+                </div>
+                <div class="row row-footer">
+                    <div class="col-4">a</div>
+                    <div class="col-4">a</div>
+                    <div class="col-4">a</div>
+                    <div class="col-4">a</div>
+                    <div class="col-4">a</div>
                 </div>
         </div>
     </footer>
