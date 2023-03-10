@@ -149,8 +149,8 @@ ul {
 
 .nav-links a{
     height: 70px;
-    font-size: 1.3rem;
-    color: #a5a3a3;
+    font-size: 1rem;
+    color: #ece9e9;
     text-decoration: none;
     font-weight:1.2 ;
  
@@ -207,6 +207,10 @@ ul {
     border-radius: 4px 4px 0 0;
  }
 
+.spmm {
+    margin-top: 30px;
+}
+
  .body-icon i {
     font-size: 20px;
  }
@@ -218,6 +222,7 @@ ul {
     background-color:rgb(38, 38, 38) ;
     border: 1px solid black;
     border-radius: 0 0 4px 4px;
+    height: 330px;
 }
  .select a{
    margin-left:  10px;
@@ -226,11 +231,11 @@ ul {
  }
 .select li{
     list-style-type: none;
-    height: 50px;
+    height: 55px;
     border-bottom: 0.5px solid rgb(78, 77, 77);
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
+    padding-top: 14px;
  }
  .select :hover{
     color: rgb(241, 241, 241);
@@ -253,27 +258,31 @@ ul {
 }
 
  /* slide */
+
  #slideshow {
     overflow: hidden;
-    height: 510px;
-    width: 728px;
+    height: 390px;
+    width: 99%;
     margin: 0 auto;
 }
 .slide-wrapper {
     width: 2912px;
-    -webkit-animation: slide 14s ease infinite;
+    animation: slide 14s ease infinite; 
+    display: flex;
 }
 .slide {
     float: left;
-    height: 510px;
-    width: 728px;
+    height: 410px;
+    width: 1000px;
 }
-@-webkit-keyframes slide {
+
+
+@keyframes slide {
     20% {margin-left: 0px;}
-    30% {margin-left: -728px;}
-    50% {margin-left: -728px;}
-    60% {margin-left: -1456px;}
-    80% {margin-left: -1456px;}
+    30% {margin-left: -1000px;}
+    50% {margin-left: -1000px;}
+    60% {margin-left: -2000px;}
+    80% {margin-left: -2000px;}
 }
 
 .row-clothers {
@@ -383,3 +392,36 @@ ul {
     text-decoration: none;
     color: #a5a3a3;
 }
+
+/* mua hàng */
+
+.buy {
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 30%;
+    height: 50px;
+    padding-left: 10px;
+    background: black;
+    color: #fdfdfd;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    display: none;
+}
+
+.buy a {
+    text-decoration: none;
+    color: white;
+}
+
+.buy:hover {
+    background: #0fa87a;
+    color: #252525;
+    border-color: #0fa87a;
+}
+
+.buy_hover {
+    position: relative;
+}
+
+
