@@ -147,6 +147,12 @@ ul {
     justify-content: space-between;
 }
 
+.nav-links li a:hover{
+    color: #0f8561;
+}
+.navstyle:hover{
+    color: #0f8561;
+}
 .nav-links a{
     height: 70px;
     font-size: 1rem;
@@ -163,15 +169,45 @@ ul {
 } */
 .subnav{
     display: none ;
-    top: 210px;
+    top: 230px;
     position: absolute;
     background-color:rgb(38, 38, 38);
-    left: 470px;
+    left: 380px;
+    
     list-style-type: none;
-    z-index: 1;
+    z-index: 2;
     width: 180px;
 }
 
+.nav_links-has:hover + .subnav{
+    
+    display: block;
+}
+.subnav:hover{
+    display: block;
+}
+.subnav li{
+    border-bottom: 0.5px solid rgb(78, 77, 77);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 14px;
+    align-items: center;
+    
+}
+.nav-links ul{
+    padding-left: 0;
+}
+.subnav li a:hover{
+    color: #0f8561;
+}
+.nav-links ul  :hover{
+   
+    color: rgb(241, 241, 241);
+    background-color: rgb(32, 32, 32);
+}
+/* .subnav li:hover+.subicon{
+    color: #ece9e9;
+} */
 .btn-outline-success:hover{
     color: #0fa87a;
     background: white;
@@ -431,14 +467,50 @@ ul {
     justify-content: space-evenly;
 }
 
-.form-control{
+.form-control.control-quality{
     display: flex;
+    padding: 0;
+    width: 200px;
+    height: 60px;
+    justify-content: flex-end;
 }
 .form_product_content{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .button_actions button{
-    background-color: #0fa87a;
+    background-color: #45b493;
+    border-radius: 3px;
+    margin-right: 180px;
+    margin-left: 10px;
+
 }
+.button_actions button:hover{
+    background-color: #fdfdfd;
+    color: #252525;
+}
+.soluong_type_1{
+    display: flex;
+}
+.btn-2num{
+    display: grid;
+    
+}
+
+.colimg2{
+    margin-top: 10px;
+    display: flex;
+    justify-content: start;
+}
+.text_content{
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 4px;
+}
+.text_infosp{
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 4px;
+    background-color: #0f8561;
+    margin-left: -12px;
+}
+/* register */
