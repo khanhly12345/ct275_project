@@ -424,4 +424,21 @@ ul {
     position: relative;
 }
 
+/* details */
 
+.breadcrumb{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-control{
+    display: flex;
+}
+.form_product_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_actions button{
+    background-color: #0fa87a;
+}
