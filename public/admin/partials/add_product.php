@@ -1,29 +1,4 @@
-<?php
-include "../connect.php";
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin</title>
-  <link rel="stylesheet" href="admin.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-
-<body>
-  <header class="header">
-    <div class="wrap_header">
-      <ul>
-        <li><a href="">Users</a></li>
-        <li><a href="">Product</a></li>
-        <li><a href="">Order</a></li>
-      </ul>
-    </div>
-  </header>
+<?php include "component/header.php" ?>
   <main class="main">
     <div class="wrap_main">
       <h1>ADD PRODUCT</h1>
@@ -128,11 +103,4 @@ include "../connect.php";
       ?>
     </div>
   </main>
-  <footer class="footer">
-    <div class="wrap_footer">
-      &copy; Designed by Khanh Ly
-    </div>
-  </footer>
-</body>
-
-</html>
+  <?php include "component/footer.php" ?>

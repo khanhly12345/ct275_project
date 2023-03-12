@@ -1,86 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
-    <link rel="icon" href="../images/logo/logo.webp">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../../libraries/source/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" integrity="sha512-QfDd74mlg8afgSqm3Vq2Q65e9b3xMhJB4GZ9OcHDVy1hZ6pqBJPWWnMsKDXM7NINoKqJANNGBuVRIpIJ5dogfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- 
-</head>
-<body>
-    <!-- header -->
-    <div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-3">
-                    <ul class="left_header">
-                        <li>    
-                            <a href="">Đăng ký</a>
-                        </li>
-                        <li class="li">
-                            <a href="">Đăng nhập</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6"></div>
-                <div class="col-3 d-flex justify-content-end">
-                    <ul class="right_header">
-                        <li>
-                            <a href="">Đơn hàng</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="main-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-3">
-                    <img src="../images/logo/logo.webp" alt="">
-
-                </div>
-                <div class="col-3">
-                    <div class="wrp d-flex justify-content-end">
-                        <div class="header-icon-truck">
-                            <i class="fa fa-truck fa-3x"></i>
-                        </div>
-                        <div class="header-icon-freeship">
-                            <p1 style="color: #20c997;">Miễn phí vận chuyển</p1><br>
-                            <span>Với đơn hàng trên 1.000.000đ </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="wrp d-flex justify-content-end">
-                        <div class="header-icon-call">
-                            <i class="fa fa-phone-volume fa-3x"></i>
-                        </div>
-                        <div class="header-icon-fastcall">
-                            <p1 style="color: #20c997;">Đặt hàng nhanh</p1><br>
-                            <span>Gọi ngay 19006750</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="wrp d-flex justify-content-end">
-                        <div class="header-icon-cart">
-                            <i class="fa fa-cart-plus fa-3x"></i>
-                        </div>
-                        <div class="header-icon-product">
-                            <p1 style="color: #20c997;">Giỏ hàng</p1><br>
-                            <span style="font-size:small;">Sản phẩm</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<?php include "../partialss/header.php"?>
     <!-- nav -->
     <nav class="nav p-1">
         <div class="container">
@@ -151,16 +69,30 @@
         <div class="container spmm">
             <h1 class="h1">Sản phẩm mới nhất</h1>
             <div class="row row-clothers">
-                <div class="col-3 buy_hover">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>
-                </div>
+                <?php
+                    try{
+                        $query = "SELECT * from product";
+                        $sth = $pdo->query($query);
+                        $sth->execute();
+                        while($row = $sth->fetch()){
+                            ?>
+                            <div class="col-3 buy_hover" data-items="<?php echo $row['type']?>">
+                                    <img style="height: 70%;" src="../admin/upload_img/product/<?php echo $row['img']?>" alt="">
+                                    <a href=""style="text-decoration:none;"><p><?php echo $row['titte']?></p></a>
+                                    <div class="w_span">
+                                        <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;">310.000đ</span>
+                                    </div>
+                                    <div class="buy">
+                                        <a href="details.php?id=<?php echo $row['id']?>">Mua hàng</a>
+                                    </div>
+                            </div>
+                            <?php
+                        }
+                    }catch(PDOException $e){
+                        echo $e->getMessage();
+                    }
+                ?>
+                
                 <div class="col-3 buy_hover">
                     <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
                     <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
@@ -287,88 +219,4 @@
     </div>  
     </main><hr>
     <!-- footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row fter">
-                <div class="col-4 f1">
-                    <img src="../images/img_footer/logo_footer.webp" alt=""> 
-                    <ul class="ul">
-                        <li><span class="call_ft"><i class="fa fa-location-arrow"></i></span><a href="">Tầng 6 266 Đội Cấn - Ba Đình - Hà Nội, Hà Nội</a></li>
-                        <li><span class="call_ft"><i class="fa fa-phone-volume fa-3x"></i></span><a href="">0943 703 313</a></li>
-                        <li><span class="call_ft"><i class="fa fa-envelope"></i></span><a href="">nguenkhanhly@gmail.com</a></li>
-                    </ul>
-                </div>
-                <div class="col-8">
-                    <div class="row">
-                        <div class="col-3 f1">
-                            <p>TÀI KHOẢN</p>
-                            <ul>
-                                <li><a href="">Trang chủ</a></li>
-                                <li><a href="">Giới thiệu</a></li>
-                                <li><a href="">Sản phẩm</a></li>
-                                <li><a href="">Tin tức</a></li>
-                                <li><a href="">Liên hệ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-3 f1">
-                            <p>CHÍNH SÁCH</p>
-                            <ul>
-                                <li><a href="">Trang chủ</a></li>
-                                <li><a href="">Giới thiệu</a></li>
-                                <li><a href="">Sản phẩm</a></li>
-                                <li><a href="">Tin tức</a></li>
-                                <li><a href="">Liên hệ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-3 f1">
-                            <p>ĐIÈU KHOẢN</p>
-                            <ul>
-                                <li><a href="">Trang chủ</a></li>
-                                <li><a href="">Giới thiệu</a></li>
-                                <li><a href="">Sản phẩm</a></li>
-                                <li><a href="">Tin tức</a></li>
-                                <li><a href="">Liên hệ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-3 f1">
-                            <p>HƯỚNG DẪN</p>
-                            <ul>
-                                <li><a href="">Trang chủ</a></li>
-                                <li><a href="">Giới thiệu</a></li>
-                                <li><a href="">Sản phẩm</a></li>
-                                <li><a href="">Tin tức</a></li>
-                                <li><a href="">Liên hệ</a></li>
-                            </ul>
-                        </div>  
-                    </div>  
-                    
-                </div>
-            </div>
-        </div>
-        <div class="fter2">
-            <div class="container">
-                <div class="row fter_end_roof">
-                    <div class="col-6 div1">&copy; Bản quyền thuộc về Avent Team | Cung cấp bởi KaLy</div>
-                    <div class="col-6 fter_end">
-                        <ul>
-                            <li><a href="">Trang chủ</a></li>
-                            <li><a href="">Giới thiệu</a></li>
-                            <li><a href="">Sản phẩm</a></li>
-                            <li><a href="">Tin tức</a></li>
-                            <li><a href="">Liên hệ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
-
-    <!-- js -->
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-</body>
-</html> 
+    <?php include "../partialss/footer.php"?>
