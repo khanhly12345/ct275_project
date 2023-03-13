@@ -476,8 +476,9 @@ ul {
 }
 .form_product_content{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* justify-content: space-between;
+    align-items: center; */
+    flex-direction: column;
 }
 .button_actions button{
     background-color: #45b493;
@@ -512,5 +513,22 @@ ul {
     border-radius: 4px;
     background-color: #0f8561;
     margin-left: -12px;
+}
+.button_actions {
+    padding: 20px 0 0 0;
+    position: relative;
+    left: -5px;
+}
+
+.button_actions button {
+    padding: 10px;
+}
+
+.size select{
+    width: 30%;
+}
+/* check */
+.error{
+    color: red !important;
 }
 /* register */

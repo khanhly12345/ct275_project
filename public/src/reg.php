@@ -1,42 +1,4 @@
 <?php include "../partialss/header.php"?>
-    <!-- nav -->
-    <nav class="nav p-1">
-        <div class="container">
-            <div class="row-nav">
-                <div class="col-6 ">
-                    <ul class="nav-links">
-                        <a style="color: rgb(11, 145, 116) !important;" href="">Trang Chủ</a>
-                        <a class="navstyle" href="">Giới Thiệu</a>
-                        <li>
-                            <a class="nav_links-has" href="">
-                                Sản Phẩm
-                                 <i style="height: 20%;" class="fa fa-chevron-down"></i>
-                            </a>
-                            <ul style="display: none;" class="subnav">
-                                <li><a href="">Áo Phông</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                                <li><a href="">Sơ mi</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                                <li><a href="">Cộc tay</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                                <li><a href="">Áo thun</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                                <li><a href="">Sản phẩm mới</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                            
-                            </ul>       
-                        </li>            
-                            <a class="navstyle" href="">Tin Tức</a>
-                            <a class="navstyle" href="">Liên Hệ</a>
-                    </ul>
-                </div>
-                <div class="col-6">
-                    <div class="search">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search">
-                        </form>
-                        <form class="btn-search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button></div>
-                        </form>
-                </div>
-            </div>
-        </div>
-    </nav>
     <main><div class="body">
             <div class="container">
                 <section class="vh-100 bg-image"
@@ -48,39 +10,47 @@
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-1">
               <h1 class="text-uppercase text-center mb-2">Đăng ký tài khoản</h1>
-
-              <form>
-
+              <?php
+                if(isset($_SESSION['check_passwork'])) {
+                  echo $_SESSION['check_passwork'];
+                  unset($_SESSION['check_passwork']);
+                }
+              ?>
+              <form action="" method="POST">
+              
                 <div class="form-outline">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example1cg">Họ Tên</label>
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="fullname"/>                  
                 </div>
 
                 <div class="form-outline">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example3cg">Tài khoản</label>
+                  <input type="text" id="form3Example3cg" class="form-control form-control-lg" name="account"/>
                 </div>
 
                 <div class="form-outline">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cg">Mật khẩu</label>
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password"/>
                 </div>
 
                 <div class="form-outline">
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cdg">Nhập lại mật khẩu</label>
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" name="same_password"/>
                 </div>
 
                 <div class="form-outline">
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cdg">Nhập số điện thoại</label>
+                  <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="sdt"/>
                 </div>
 
                 <div class="form-outline">
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cdg">Nhập địa chỉ</label>
+                  <label class="form-label" for="form3Example4cdg">Nhập tỉnh thành</label>
+                  <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="city"/>
                 </div>
-
+                <div class="form-outline">
+                  <label class="form-label" for="form3Example4cdg">Nhập huyện</label>
+                  <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="district"/>
+                </div>
                 <div class="form-check d-flex justify-content-center mb-3">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
                   <label class="form-check-label" for="form2Example3g">
@@ -89,7 +59,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="submit" name="submit"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-white">Đăng ký</button>
                 </div>
 
@@ -97,7 +67,37 @@
                     class="fw-bold text-body"><u>Đăng nhập tại đây!</u></a></p>
 
               </form>
+              <?php
+                  if(isset($_POST['submit'])) {
+                      $fullname = $_POST['fullname'];
+                      $account = $_POST['account'];
+                      $password = md5($_POST['password']);
+                      $same_password = md5($_POST['same_password']);
+                      $phone = $_POST['sdt'];
+                      $city = $_POST['city'];
+                      $district = $_POST['district'];
+                      echo $password;
+                      echo $same_password;
+                      if($password != $same_password) {
+                        $_SESSION['check_passwork'] = "<div class='error'> Hai mật khẩu không khớp! </div>";
+                        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/reg.php'</script>";
+                      }else{
+                        $query = "INSERT INTO users (account, password, fullname, phone, city, district) VALUES (?,?,?,?,?,?)";
+                        $sth = $pdo->prepare($query);
+                        $sth->execute([
+                          $account,
+                          $password,
+                          $fullname,
+                          $phone,
+                          $city,
+                          $district
+                        ]);
+                        if($sth == true) {
 
+                        }
+                      }
+                  }
+              ?>
             </div>
           </div>
         </div>

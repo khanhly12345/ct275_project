@@ -1,39 +1,15 @@
 <?php include "../partialss/header.php"?>
-    <!-- nav -->
-    <nav class="nav p-1">
-        <div class="container">
-            <div class="row-nav">
-                <div class="col-6 ">
-                    <ul class="nav-links">
-                        <a style="color: rgb(11, 145, 116) !important;" href="">Trang Chủ</a>
-                        <a href="">Giới Thiệu</a>
-                        <li>
-                            <a href="">
-                                Sản Phẩm
-                                 <i style="height: 20%;" class="fa fa-chevron-down"></i>
-                            </a>
-                        <ul class="subnav">
-                            <li><a href="">Merchandise</a></li>
-                            <li><a href="">Extras</a></li>
-                            <li><a href="">Media</a></li>
-                        </ul>       
-                     </li>            
-                        <a href="">Tin Tức</a>
-                        <a href="">Liên Hệ</a>
-                    </ul>
-                </div>
-                <div class="col-6">
-                    <div class="search">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search">
-                        </form>
-                        <form class="btn-search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button></div>
-                        </form>
-                </div>
-            </div>
-        </div>
-    </nav>
+
+<?php
+    if(isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $query = "SELECT * FROM product p join product_size ps on p.id_product = ps.id_product where p.id_product=$id";
+        $sth = $pdo->prepare($query);
+        $sth->execute();
+        $row = $sth->fetch();
+    }
+
+?>
     <!-- body -->
     <div class="body">
         <div class="container">
@@ -62,37 +38,54 @@
                         </div>
                         <div class="col-6">
                             <div class="row row-info">
-                                <p1 style="font-size: larger;">Áo sơ mi Asos</p1>
+                                <p1 style="font-size: larger;"><?php echo $row['titte']?></p1>
                             <div class="w_span">
-                                <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                                <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;">310.000đ</span>
                             </div>
                             <br>
                             <p style="font-size: small;">Mô tả bản cập nhật</p>
                             <hr>
                             </div>
-                            <div class="row row-qualyti">
-                                 <label>Số lượng</label>
-                                <div class="form-group form_button_details">
-                                <div class="form_product_content">
-                                    
-                                    <div class="soluong soluong_type_1">
-                                        <div class="form-control control-quality">
-                                            <input type="text" id="qtym" name="quantity" value="1" maxlength="3" class="form-control  ">
-                                            
+                            <form action="" method="POST">
+                                <div class="size">
+                                    <select name="size">
+                                        <option value="">Select size:</option>
+                                        <option value="S"><?php if($row['s'] > 0) { echo "S";}?></option>
+                                        <option value="M"><?php if($row['m'] > 0) { echo "M";}?></option>
+                                        <option value="L"><?php if($row['l'] > 0) { echo "L";}?></option>
+                                    </select>
+                                </div>
+                                <div class="row row-qualyti">
+                                    <label>Số lượng: </label>
+                                    <div class="form-group form_button_details">
+                                    <div class="form_product_content">
+                                        <div class="soluong soluong_type_1">
+                                            <div class="form-control control-quality">
+                                                <input type="text" id="qtym" name="quantity" value="1" maxlength="3" class="form-control  ">
+                                                
+                                            </div>
+                                                <div class="btn-2num">
+                                                    <button class="btn_num num_2 "   type="button"><i  class="fa fa-plus"></i></button>
+                                                    <button class="btn_num num_1 "   type="button"><i class="fa fa-minus"></i></button>	
+                                                </div>    
                                         </div>
-                                            <div class="btn-2num">
-                                                <button class="btn_num num_2 "   type="button"><i  class="fa fa-plus"></i></button>
-                                                <button class="btn_num num_1 "   type="button"><i class="fa fa-minus"></i></button>	
-                                            </div>    
-                                    </div>
-                                    <div class="button_actions ">
-                                        <button type="submit">
-                                             <span class="text_1">Cho vào giỏ hàng</span>
-                                         </button>	                                       
-                                    </div>
-                                    
-                                </div><br>
-                                
+                                        <input type="hidden" name="id" value="<?php echo $row['id_product']?>">
+                                        <div class="button_actions ">
+                                            <button type="submit" name="submit">
+                                                <span class="text_1">Cho vào giỏ hàng</span>
+                                            </button>	                                       
+                                        </div>
+                                        
+                                </div>
+                            </form>
+                            <br>
+                            <?php
+                                if(isset($_POST['submit'])) {
+                                    $id = $_POST['id'];
+                                    echo $id;
+                                    echo $_POST['size'];
+                                }
+                            ?>
                             </div>
                             <p1>tags: Áo phông</p1>
                                 <p>share: facebook Pinterest tweeter Google</p>
@@ -100,7 +93,7 @@
                         </div>                  
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-6 colimg2 ">
                             <div class="col-3">
                                 <div >
@@ -114,7 +107,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>                     -->
                 </div><hr><br>
                 <div class="row">
                     <div class="col-4">

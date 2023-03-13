@@ -1,42 +1,4 @@
 <?php include "../partialss/header.php"?>
-    <!-- nav -->
-    <nav class="nav p-1">
-        <div class="container">
-            <div class="row-nav">
-                <div class="col-6 ">
-                    <ul class="nav-links">
-                        <a style="color: rgb(11, 145, 116) !important;" href="">Trang Chủ</a>
-                        <a class="navstyle" href="">Giới Thiệu</a>
-                        <li>
-                            <a class="nav_links-has" href="">
-                                Sản Phẩm
-                                 <i style="height: 20%;" class="fa fa-chevron-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li><a href="">Áo Phông</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                                <li><a href="">Sơ mi</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                                <li><a href="">Cộc tay</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                                <li><a href="">Áo thun</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                                <li><a href="">Sản phẩm mới</a><i class="fa fa-angle-right fa-2x subicon"></i></li>
-                            
-                            </ul>       
-                        </li>            
-                            <a class="navstyle" href="">Tin Tức</a>
-                            <a class="navstyle" href="">Liên Hệ</a>
-                    </ul>
-                </div>
-                <div class="col-6">
-                    <div class="search">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search">
-                        </form>
-                        <form class="btn-search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button></div>
-                        </form>
-                </div>
-            </div>
-        </div>
-    </nav>
     <!-- body -->
     <main class="body">
         <div class="container">
@@ -83,7 +45,7 @@
                                         <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;">310.000đ</span>
                                     </div>
                                     <div class="buy">
-                                        <a href="details.php?id=<?php echo $row['id']?>">Mua hàng</a>
+                                        <a href="details.php?id=<?php echo $row['id_product']?>">Mua hàng</a>
                                     </div>
                             </div>
                             <?php
