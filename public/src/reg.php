@@ -8,7 +8,7 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-1">
+            <div  class="card-body p-1 ">
               <h1 class="text-uppercase text-center mb-2">Đăng ký tài khoản</h1>
               <?php
                 if(isset($_SESSION['check_passwork'])) {
@@ -20,36 +20,36 @@
               
                 <div class="form-outline">
                   <label class="form-label" for="form3Example1cg">Họ Tên</label>
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="fullname"/>                  
+                  <input style="font-size: x-small;"  type="text" id="form3Example1cg" class="form-control form-control-lg" name="fullname"/>                  
                 </div>
 
                 <div class="form-outline">
                   <label class="form-label" for="form3Example3cg">Tài khoản</label>
-                  <input type="text" id="form3Example3cg" class="form-control form-control-lg" name="account"/>
+                  <input style="font-size: x-small;"  type="text" id="form3Example3cg" class="form-control form-control-lg" name="account"/>
                 </div>
 
                 <div class="form-outline">
                   <label class="form-label" for="form3Example4cg">Mật khẩu</label>
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password"/>
+                  <input style="font-size: x-small;"  type="password" id="form3Example4cg" class="form-control form-control-lg" name="password"/>
                 </div>
 
                 <div class="form-outline">
                   <label class="form-label" for="form3Example4cdg">Nhập lại mật khẩu</label>
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" name="same_password"/>
+                  <input style="font-size: x-small;"  type="password" id="form3Example4cdg" class="form-control form-control-lg" name="same_password"/>
                 </div>
 
                 <div class="form-outline">
                   <label class="form-label" for="form3Example4cdg">Nhập số điện thoại</label>
-                  <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="sdt"/>
+                  <input style="font-size: x-small;"  type="text" id="form3Example4cdg" class="form-control form-control-lg" name="sdt"/>
                 </div>
 
                 <div class="form-outline">
                   <label class="form-label" for="form3Example4cdg">Nhập tỉnh thành</label>
-                  <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="city"/>
+                  <input style="font-size: x-small;" type="text" id="form3Example4cdg" class="form-control form-control-lg" name="city"/>
                 </div>
                 <div class="form-outline">
                   <label class="form-label" for="form3Example4cdg">Nhập huyện</label>
-                  <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="district"/>
+                  <input style="font-size: x-small;"  type="text" id="form3Example4cdg" class="form-control form-control-lg" name="district"/>
                 </div>
                 <div class="form-check d-flex justify-content-center mb-3">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
@@ -99,6 +99,7 @@
                   }
               ?>
             </div>
+            
           </div>
         </div>
       </div>

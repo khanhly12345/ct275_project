@@ -190,9 +190,9 @@ ul {
     border-bottom: 0.5px solid rgb(78, 77, 77);
     display: flex;
     justify-content: space-between;
-    padding-top: 14px;
-    align-items: center;
     
+    align-items: center;
+    height: fit-content;
 }
 .nav-links ul{
     padding-left: 0;
@@ -531,4 +531,34 @@ ul {
 .error{
     color: red !important;
 }
+/* login */
 /* register */
+.form-outline{
+    padding-left: 40px;
+}
+.form-control-lg{
+    width: 90%;
+}
+
+/* cart*/
+.row-cart .col-3{
+    display: flex;
+    justify-content: space-evenly;
+}
+.row-cart .col-12{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row-cart p{
+    text-align: center;
+    font-size: small;
+}
+.row-cart p1:hover{
+    color: #0f8561;
+}
+.cart-icon{
+    height: 100px;
+    width: 100px;
+    
+}
