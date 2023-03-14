@@ -24,12 +24,42 @@
                 <div class="col-3">
                     <ul class="left_header">
                         <li>    
-                            <a href="reg.php">Đăng ký</a>
+                            <a class="login_signi" href="http://localhost:8080/Project_ct275/public/src/reg.php">Đăng ký</a>
+                            
+                            <?php
+                                if(isset($_SESSION['user'])) {
+                                    $id = $_SESSION['user'];
+                                    $query = "SELECT id, fullname FROM users WHERE id = $id";
+                                    $sth = $pdo->query($query);
+                                    $sth->execute();
+                                    if($sth == true) {
+                                        $row = $sth->fetch();
+                                        echo "<p class='success' style='position: relative; top:10px;'>".$row['fullname']."</p>";     
+                                    }else{
+                                        echo "loi";
+                                    }
+                                }
+                            ?>
+                            
                         </li>
                         <li class="li">
-                            <a href="">Đăng nhập</a>
+                            <a class="login_signi" href="http://localhost:8080/Project_ct275/public/src/login.php">Đăng nhập</a>
+
+                                <?php 
+                                    if(isset($_SESSION['exit'])) {
+                                        echo $_SESSION['exit'];
+                                        if($sth == true) {
+                                            echo "<script>
+                                            let login_signin = document.getElementsByClassName('login_signi');
+                                            login_signin[0].classList.add('exit');
+                                            login_signin[1].classList.add('exit');</script>";
+                                        }
+                                    }
+                                ?>
+
                         </li>
                     </ul>
+                    
                 </div>
                 <div class="col-6"></div>
                 <div class="col-3 d-flex justify-content-end">
@@ -91,7 +121,7 @@
             <div class="row-nav">
                 <div class="col-6 ">
                     <ul class="nav-links">
-                        <a style="color: rgb(11, 145, 116) !important;" href="">Trang Chủ</a>
+                        <a style="color: rgb(11, 145, 116) !important;" href="http://localhost:8080/Project_ct275/public/src/">Trang Chủ</a>
                         <a class="navstyle" href="">Giới Thiệu</a>
                         <li>
                             <a class="nav_links-has" href="">
@@ -113,11 +143,11 @@
                 </div>
                 <div class="col-6">
                     <div class="search">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search">
-                        </form>
-                        <form class="btn-search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button></div>
+                        <form action="http://localhost:8080/Project_ct275/public/src/search.php" method="POST" class="form-inline my-2 my-lg-0 ">
+                            <input style="width: 240px;" class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search" name="search">
+                        <!-- </form>
+                        <form action="http://localhost:8080/Project_ct275/public/src/search.php" method="POST" class="btn-search"> -->
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Tìm Kiếm</button></div>
                         </form>
                 </div>
             </div>

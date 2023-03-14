@@ -26,3 +26,24 @@ for(let i=0; i<buy_hover.length; i++) {
         img[i].style.opacity = "1";
     })
 }
+
+// minus and add
+let pre = document.getElementsByClassName("pre")[0];
+let next = document.getElementsByClassName("next")[0];
+let form_control = document.getElementsByClassName("form-control")[2]; 
+console.log(typeof(Number(form_control.value)));
+    pre.addEventListener("click", () => {
+        if(form_control.value == 1) {
+            return;
+        }else{
+            form_control.value = form_control.value - 1;
+        }
+    })
+
+    next.addEventListener("click", () => {
+        if(form_control.value < 1) {
+            return;
+        }else{
+            form_control.value = Number(form_control.value) + 1;
+        }
+    })

@@ -138,7 +138,7 @@ ul {
     display: flex;
     justify-content: flex-end;
     margin-right: 30px;
-    
+
 }
 .nav-links {
     display: flex;
@@ -222,6 +222,15 @@ ul {
     color: white;
     position: relative;
     left: 5px;
+}
+
+.form-inline  {
+    display: flex;
+    align-items: start;
+}
+
+.form-inline button {
+    height: 38px;
 }
 
 /* .btn-search:hover{
@@ -531,11 +540,17 @@ ul {
 .error{
     color: red !important;
 }
+
+
+.success {
+    color: #0f8561;
+}
 /* login */
 /* register */
-.form-outline{
-    padding-left: 40px;
+.exit {
+    display: none;
 }
+
 .form-control-lg{
     width: 90%;
 }

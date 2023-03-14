@@ -16,7 +16,7 @@
                   unset($_SESSION['check_passwork']);
                 }
               ?>
-              <form action="" method="POST">
+              <form action="" method="POST" style="padding-left: 40px;">
               
                 <div class="form-outline">
                   <label class="form-label" for="form3Example1cg">Họ Tên</label>
@@ -93,7 +93,7 @@
                           $district
                         ]);
                         if($sth == true) {
-
+                          $_SESSION['check_passwork'] = "<div class='success'> Đăng ký thành công </div>";
                         }
                       }
                   }

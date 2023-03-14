@@ -33,10 +33,10 @@
                 <hr>
                 <div class="container">
                     <div class="row row-before">
-                        <div class="col-6 colimg1">
-                            <img style="height: 400px; width: 400px;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                        <div class="col-5 colimg1">
+                            <img style="height: 500px; width: 500px;" src="../admin/upload_img/product/<?php echo $row['img']?>" alt="">
                         </div>
-                        <div class="col-6">
+                        <div class="col-7">
                             <div class="row row-info">
                                 <p1 style="font-size: larger;"><?php echo $row['titte']?></p1>
                             <div class="w_span">
@@ -61,12 +61,12 @@
                                     <div class="form_product_content">
                                         <div class="soluong soluong_type_1">
                                             <div class="form-control control-quality">
-                                                <input type="text" id="qtym" name="quantity" value="1" maxlength="3" class="form-control  ">
+                                                <input type="text" id="qtym" name="quantity" value="1" maxlength="3" class="form-control">
                                                 
                                             </div>
                                                 <div class="btn-2num">
-                                                    <button class="btn_num num_2 "   type="button"><i  class="fa fa-plus"></i></button>
-                                                    <button class="btn_num num_1 "   type="button"><i class="fa fa-minus"></i></button>	
+                                                    <button class="btn_num num_2 next"    type="button"><i  class="fa fa-plus"></i></button>
+                                                    <button class="btn_num num_1 pre"   type="button"><i class="fa fa-minus"></i></button>	
                                                 </div>    
                                         </div>
                                         <input type="hidden" name="id" value="<?php echo $row['id_product']?>">
@@ -83,7 +83,7 @@
                                 if(isset($_POST['submit'])) {
                                     $id = $_POST['id'];
                                     echo $id;
-                                    echo $_POST['size'];
+                                    echo $_POST['quantity'];
                                 }
                             ?>
                             </div>
