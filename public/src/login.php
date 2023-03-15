@@ -27,6 +27,10 @@
                                           echo $_SESSION['check_login'];
                                           unset($_SESSION['check_login']);
                                       }
+                                      if(isset($_SESSION['check_details'])) {
+                                          echo $_SESSION['check_details'];
+                                          unset($_SESSION['check_details']);
+                                      }
                                 ?>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form2Example17">Tài khoản</label>

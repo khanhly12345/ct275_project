@@ -107,7 +107,15 @@
                             <i class="fa fa-cart-plus fa-3x"></i>
                         </div>
                         <div class="header-icon-product">
-                            <p1 style="color: #20c997;">Giỏ hàng</p1><br>
+                            <p1><a   style="color: #20c997; text-decoration:none;" href="cart.php">Giỏ hàng (<span style="color: red;" class="quanlity">
+                            <?php 
+                                $query = "SELECT * FROM cart";
+                                $sth = $pdo->query($query);
+                                $sth->execute();
+                                $count = $sth->rowCount();
+                                echo $count;
+                            ?>
+                            </span>)</a></p1><br>
                             <span style="font-size:small;">Sản phẩm</span>
                         </div>
                     </div>

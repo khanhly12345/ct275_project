@@ -1,5 +1,12 @@
 <?php include "../partialss/header.php"?>
+<?php 
+    // check user
+    if(!isset($_SESSION['user'])) {
+        $_SESSION['check_details'] = "<div class='error'>Bạn cần đăng nhập để xem chi tiết sản phẩm! </div>";
+        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/login.php'</script>"; 
+    }
 
+?>
 <?php
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -7,6 +14,7 @@
         $sth = $pdo->prepare($query);
         $sth->execute();
         $row = $sth->fetch();
+        // print_r($row);
     }
 
 ?>
@@ -69,7 +77,7 @@
                                                     <button class="btn_num num_1 pre"   type="button"><i class="fa fa-minus"></i></button>	
                                                 </div>    
                                         </div>
-                                        <input type="hidden" name="id" value="<?php echo $row['id_product']?>">
+                                        <input type="hidden" name="id" value="<?php echo $row[0]?>">
                                         <div class="button_actions ">
                                             <button type="submit" name="submit">
                                                 <span class="text_1">Cho vào giỏ hàng</span>
@@ -82,8 +90,24 @@
                             <?php
                                 if(isset($_POST['submit'])) {
                                     $id = $_POST['id'];
-                                    echo $id;
-                                    echo $_POST['quantity'];
+                                    $id_user = $_SESSION['user'];
+                                    $size = $_POST['size'];
+                                    $quantity = $_POST['quantity'];
+                                    try{
+                                        $query = "INSERT INTO cart (id_user, id_product, size, quantity) VALUES (?,?,?,?);";
+                                        $sth = $pdo->prepare($query);
+                                        $sth->execute([
+                                            $id_user,
+                                            $id,
+                                            $size,
+                                            $quantity
+                                        ]);
+                                        if($sth == true) {
+                                            echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/cart.php'</script>";
+                                        }
+                                    }catch(PDOException $e){
+                                        echo $e->getMessage();
+                                    }
                                 }
                             ?>
                             </div>
