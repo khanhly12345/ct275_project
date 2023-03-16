@@ -12,16 +12,21 @@
     </div>
     <div class="container" style="display: flex; justify-content: center;">
         <div class="row row-cart">
-            <form action="" method="POST">
+            <form action="http://localhost:8080/Project_ct275/public/src/handle_order.php" method="POST">
                 <div class="cart-details">
                     <?php 
                     // if(isset($_POST['submit'])) {
                         try {
-                            $query = "SELECT * from cart c join product p on c.id_product = p.id";
+                            $id_user = $_SESSION['user'];
+                            $query = "SELECT * from cart c join product p on c.id_product = p.id where id_user=$id_user";
                             $sth = $pdo->query($query);
                             $sth->execute();
+                            $count_cart = $sth->rowCount();
                             $count = 0;
                             $n = -1;
+                            if($count_cart == 0) {
+                                echo "<div style='position: relative; left: 40%; padding: 8px' class='error'>giỏ hàng trống!</div><hr>";
+                            }
                             while($row = $sth->fetch()) {
                                 $count = $count + $row['quantity'] * $row['price'];
                                 $n++;
@@ -52,6 +57,7 @@
                                             +
                                         </div>
                                         <input type="hidden" value="" name="sluong"></input>
+                                        <input type="hidden" value="<?php echo $id_user?>" name="id_user"></input>
                                     </div>
                                 </div>
                             </div>

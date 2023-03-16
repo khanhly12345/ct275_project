@@ -2,6 +2,10 @@
 <?php 
     include "../admin/connect.php";
 ?>
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,11 +113,17 @@
                         <div class="header-icon-product">
                             <p1><a   style="color: #20c997; text-decoration:none;" href="cart.php">Giỏ hàng (<span style="color: red;" class="quanlity">
                             <?php 
-                                $query = "SELECT * FROM cart";
+                            $count = 0  ;
+                            if(isset($_SESSION['user'])){
+                                $id_user = $_SESSION['user'];
+                                $query = "SELECT * FROM cart where id_user=$id_user";
                                 $sth = $pdo->query($query);
                                 $sth->execute();
                                 $count = $sth->rowCount();
                                 echo $count;
+                            }else{
+                                echo $count;
+                            }
                             ?>
                             </span>)</a></p1><br>
                             <span style="font-size:small;">Sản phẩm</span>

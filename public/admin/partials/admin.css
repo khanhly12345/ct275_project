@@ -32,6 +32,8 @@ ul li a {
 .main {
     display: flex;
     justify-content: center;
+    height: 50%;
+    margin-bottom: 50px;
 }
 
 .wrap_main {
@@ -42,7 +44,7 @@ ul li a {
 .footer {
     height: 50px;
     background: #0fa87a;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
