@@ -169,7 +169,7 @@ ul {
 } */
 .subnav{
     display: none ;
-    top: 230px;
+    top: 260px;
     position: absolute;
     background-color:rgb(38, 38, 38);
     left: 380px;
@@ -353,6 +353,7 @@ ul {
     80% {margin-left: -2000px;}
 }
 
+
 .row-clothers {
     height: 450px;
 }
@@ -492,7 +493,18 @@ ul {
     position: relative;
 }
 
+
 /* details */
+.body-details{
+    height: 1000px;
+}
+.buy_hover-details{
+
+}
+.row-splq {
+   
+    overflow: auto ;
+}
 
 .breadcrumb{
     display: flex;
@@ -542,9 +554,16 @@ ul {
 }
 .text_infosp{
     border: 1px solid rgb(190, 190, 190);
-    border-radius: 4px;
+    border-radius: 3px;
     background-color: #0f8561;
     margin-left: -12px;
+    color: #fff;
+    width: fit-content;
+    padding: 5px;
+
+}
+.text-intro h2{
+    
 }
 .button_actions {
     padding: 20px 0 0 0;
@@ -700,6 +719,7 @@ ul {
 .btn-contact:hover{
     background-color: #139971;
     color: #ece9e9;
+    animation: hoversub backwards 0.2s;
 }
 /* news */
 .select-news li{

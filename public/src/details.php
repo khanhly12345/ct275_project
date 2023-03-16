@@ -19,7 +19,7 @@
 
 ?>
     <!-- body -->
-    <div class="body">
+    <div class="body body-details">
         <div class="container">
             <div class="row ">
                 <div class="col-6">
@@ -136,7 +136,7 @@
                 <div class="row">
                     <div class="col-4">
                        <div class="text_infosp">
-                    <h2 style="font-family: 'Courier New', Courier, monospace; color: #fff;">Thông tin sản phẩm</h2>
+                    <h2 style="font-size: large;" >Thông tin sản phẩm</h2>
                 </div> 
                     </div>
                 </div>
@@ -146,6 +146,107 @@
                     <p>Nam giới từ xưa đến nay vẫn được hưởng ưu ái "mặc thế nào cũng được". Chính vì điều này mà đôi khi phái mạnh trở nên cẩu thả với chính mình. Nhưng ngày nay, mọi thứ đã thay đổi. Việc cẩu thả trong ăn mặc sẽ khiến bạn trở thành một anh chàng lôi thôi, luộm thuộm trong mắt mọi người. Mặc sơmi trắng khiến các chàng trai trở lên thanh lịch và nam tính hơn bao giờ hết. Có nhiều cách "hay ho" để chúng ta biến tầu trang phục này.</p><br>
                     <p>Asos là thương hiệu thời trang bình dân nổi tiếng của Anh được thành lập năm 2000 bởi Nick Robertson dưới hình thức ban đầu là trang web bán hàng thời trang trực tuyến Asos.com dành cho độ tuổi từ 18-34 tuổi. Tuy nhiên, khi càng phát triển, Asos đã thay đổi đối tượng khách hàng khi nhắm đến đa dạng các đối tượng từ phụ nữ, đàn ông, trẻ em cho tới thanh thiếu niên và cung cấp các mặt hàng chủ yếu như giầy dép, phụ kiện, trang sức, quần áo và mỹ phẩm. Phong cách thời trang của Asos chủ yếu được lấy cảm hứng từ những người nổi tiếng để tạo ra những bộ sản phẩm mang tính xu hướng, thời thượng với giá tiêu dùng bình dân nhất.</p><br>
                 </div><hr>
+                <h1 style="font-size: large; color:black" >SẢN PHẨM LIÊN QUAN</h1>
+                <hr style="border: 3px solid green;" >
+                <div class="row row-clothers row-splq">
+                <?php
+                    try{
+                        $query = "SELECT * from product";
+                        $sth = $pdo->query($query);
+                        $sth->execute();
+                        while($row = $sth->fetch()){
+                            ?>
+                            <div class="col-3 buy_hover" data-items="<?php echo $row['type']?>">
+                                    <img style="height: 70%;" src="../admin/upload_img/product/<?php echo $row['img']?>" alt="">
+                                    <a href=""style="text-decoration:none;"><p><?php echo $row['titte']?></p></a>
+                                    <div class="w_span">
+                                        <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;">310.000đ</span>
+                                    </div>
+                                    <div class="buy">
+                                        <a href="details.php?id=<?php echo $row['id_product']?>">Mua hàng</a>
+                                    </div>
+                            </div>
+                            <?php
+                        }
+                    }catch(PDOException $e){
+                        echo $e->getMessage();
+                    }
+                ?>
+                
+                <div class="col-3 buy_hover buy_hover-details">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <div class="w_span">
+                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                    </div>  
+                    <div class="buy">
+                        <a href="">Mua hàng</a>
+                    </div>    
+                </div>
+                <div class="col-3 buy_hover buy_hover-details">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <div class="w_span">
+                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                    </div>
+                    <div class="buy">
+                        <a href="">Mua hàng</a>
+                    </div>   
+                </div>
+                <div class="col-3 buy_hover buy_hover-details">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <div class="w_span">
+                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                    </div>   
+                    <div class="buy">
+                        <a href="">Mua hàng</a>
+                    </div>   
+                </div>
+                <div class="col-3 buy_hover buy_hover-details">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <div class="w_span">
+                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                    </div>   
+                    <div class="buy">
+                        <a href="">Mua hàng</a>
+                    </div>   
+                </div>
+                <div class="col-3 buy_hover buy_hover-details">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <div class="w_span">
+                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                    </div>   
+                    <div class="buy">
+                        <a href="">Mua hàng</a>
+                    </div>   
+                </div>
+                <div class="col-3 buy_hover buy_hover-details">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <div class="w_span">
+                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                    </div>   
+                    <div class="buy">
+                        <a href="">Mua hàng</a>
+                    </div>   
+                </div>
+                <div class="col-3 buy_hover buy_hover-details">
+                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                    <div class="w_span">
+                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                    </div>   
+                    <div class="buy">
+                        <a href="">Mua hàng</a>
+                    </div>   
+                </div>
+            </div><br>
+                
+
+
         </div>
     </div>
 

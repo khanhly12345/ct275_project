@@ -140,7 +140,7 @@
                 <div class="col-6 ">
                     <ul class="nav-links">
                         <a style="color: rgb(11, 145, 116) !important;" href="http://localhost:8080/Project_ct275/public/src/">Trang Chủ</a>
-                        <a class="navstyle" href="">Giới Thiệu</a>
+                        <a class="navstyle" href="../src/gioithieu.php">Giới Thiệu</a>
                         <li>
                             <a class="nav_links-has" href="">
                                 Sản Phẩm
@@ -155,8 +155,8 @@
                             
                             </ul>       
                         </li>            
-                            <a class="navstyle" href="">Tin Tức</a>
-                            <a class="navstyle" href="">Liên Hệ</a>
+                            <a class="navstyle" href="../src/news.php">Tin Tức</a>
+                            <a class="navstyle" href="../src/contact.php">Liên Hệ</a>
                     </ul>
                 </div>
                 <div class="col-6">
