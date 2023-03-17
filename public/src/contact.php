@@ -38,7 +38,7 @@
                             <li><span class="call_ft"><i class="fa fa-phone-volume fa-3x"></i></span><a href="">0943 703 313</a></li>
                             <li><span class="call_ft"><i class="fa fa-envelope"></i></span><a href="">nguenkhanhly@gmail.com</a></li>
                         </ul>
-                    </div>
+                    </div> 
                     
                 </div>
             </div>

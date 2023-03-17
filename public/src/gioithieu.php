@@ -21,7 +21,7 @@
                     <p style="font-size: small;">Bạn có thể mua sắm thoải mái trên Vemouse mà không có bất kỳ lo lắng nào: trả hàng trong vòng 30 ngày kể từ ngày nhận hàng. Nếu bạn có bất kì câu hỏi nào về các sản phẩm của chúng tôi từ quần áo nam, trang phục nữ, mỹ phẩm nam hay trang sức hãy gọi ngay tới bộ phận chăm sóc khách hàng.</p><br>
                 </div>
             </div>
-        </div>
+        </div> 
     </main><hr>
     <!-- footer -->
     <?php include "../partialss/header.php"?> 
