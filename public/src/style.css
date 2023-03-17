@@ -191,7 +191,7 @@ ul {
         opacity: 1;
     }
 }
-.subnav:hover{
+.subnav:hover{ 
     display: block;
 }
 .subnav li{
