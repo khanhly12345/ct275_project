@@ -33,7 +33,29 @@
             <div class="row row-clothers">
                 <?php
                     try{
-                        $query = "SELECT * from product";
+                        // pagintion
+                        $page = 0;
+                        if (!isset ($_GET['page']) ) {
+
+                            $page = 1;
+                            
+                        } else {
+                            
+                            $page = $_GET['page'];
+                            
+                        }
+
+                        $results_per_page = 2;
+
+                        $page_first_result = ($page-1) * $results_per_page; 
+
+                        $query_pagintion = "SELECT * FROM product";
+                        $sth_pagintion = $pdo->query($query_pagintion);
+                        $sth_pagintion->execute();
+                        $number_of_result = $sth_pagintion->rowCount();
+                        $number_of_page = ceil ($number_of_result / $results_per_page);
+                        // select product
+                        $query = "SELECT * from product LIMIT ". $page_first_result . ',' . $results_per_page;
                         $sth = $pdo->query($query);
                         $sth->execute();
                         while($row = $sth->fetch()){
@@ -55,46 +77,6 @@
                     }
                 ?>
                 
-                <div class="col-3 buy_hover">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>  
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>    
-                </div>
-                <div class="col-3 buy_hover">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div>
-                <div class="col-3 buy_hover">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>   
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div> 
-                <div class="col-3 buy_hover">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>   
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div>
             </div><br>
             <div class="row row-clothers">
                 <div class="col-3 buy_hover">
@@ -139,53 +121,16 @@
                 </div>
             </div><br>
         </div>
-        <div class="row row-clothers">
-            <div class="col-3 buy_hover">
-                <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                <div class="w_span">
-                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                </div>                  
-                <div class="buy">
-                    <a href="">Mua hàng</a>
-                </div>             
-            </div>
-            <div class="col-3 buy_hover">
-                <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                <div class="w_span">
-                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                </div>                
-                <div class="buy">
-                    <a href="">Mua hàng</a>
-                </div>    
-            </div>
-            <div class="col-3 buy_hover">
-                <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                <div class="w_span">
-                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                </div>              
-                <div class="buy">
-                    <a href="">Mua hàng</a>
-                </div>        
-            </div>
-            <div class="col-3 buy_hover">
-                <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                <div class="w_span">
-                    <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                </div>           
-                <div class="buy">
-                    <a href="">Mua hàng</a>
-                </div>     
-            </div>
-        </div><br>
+
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                 <?php 
+                    for($page = 1; $page<= $number_of_page; $page++) {
+                        ?>
+                            <li class="page-item"><a class="page-link" href="index.php?page=<?php echo $page?>"><?php echo $page?></a></li>
+                        <?php
+                        }
+                 ?>   
             </ul>
           </nav>
     </div>  
