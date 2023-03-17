@@ -1,4 +1,12 @@
 <?php include "../partialss/header.php"?>
+<?php 
+    // check user
+    if(!isset($_SESSION['user'])) {
+        $_SESSION['check_details'] = "<div class='error'>Bạn cần đăng nhập để xem chi tiết sản phẩm! </div>";
+        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/login.php'</script>"; 
+    }
+
+?>
 <main class="body">
         <div class="container">
             <div class="row-cart">

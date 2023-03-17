@@ -38,7 +38,7 @@
                                     $sth->execute();
                                     if($sth == true) {
                                         $row = $sth->fetch();
-                                        echo "<p class='success' style='position: relative; top:10px;'>".$row['fullname']."</p>";     
+                                        echo "<a href='http://localhost:8080/Project_ct275/public/src/edit_user.php?id=$id'><p class='success' style='position: relative; top:10px;'>".$row['fullname']."</p></a>";         
                                     }else{
                                         echo "loi";
                                     }
@@ -69,7 +69,7 @@
                 <div class="col-3 d-flex justify-content-end">
                     <ul class="right_header">
                         <li>
-                            <a href="">Đơn hàng</a>
+                            <a href="http://localhost:8080/Project_ct275/public/src/order_main.php">Đơn hàng</a>
                         </li>
                     </ul>
                 </div>
