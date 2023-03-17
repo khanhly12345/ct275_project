@@ -151,7 +151,7 @@
                 <div class="row row-clothers row-splq">
                 <?php
                     try{
-                        $query = "SELECT * from product";
+                        $query = "SELECT * from product LIMIT 4";
                         $sth = $pdo->query($query);
                         $sth->execute();
                         while($row = $sth->fetch()){
@@ -173,76 +173,76 @@
                     }
                 ?>
                 
-                <div class="col-3 buy_hover buy_hover-details">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>  
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>    
-                </div>
-                <div class="col-3 buy_hover buy_hover-details">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                    <!-- <div class="col-3 buy_hover buy_hover-details">
+                        <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                        <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                        <div class="w_span">
+                            <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                        </div>  
+                        <div class="buy">
+                            <a href="">Mua hàng</a>
+                        </div>    
                     </div>
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div>
-                <div class="col-3 buy_hover buy_hover-details">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>   
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div>
-                <div class="col-3 buy_hover buy_hover-details">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>   
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div>
-                <div class="col-3 buy_hover buy_hover-details">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>   
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div>
-                <div class="col-3 buy_hover buy_hover-details">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>   
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div>
-                <div class="col-3 buy_hover buy_hover-details">
-                    <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
-                    <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
-                    <div class="w_span">
-                        <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
-                    </div>   
-                    <div class="buy">
-                        <a href="">Mua hàng</a>
-                    </div>   
-                </div>
+                    <div class="col-3 buy_hover buy_hover-details">
+                        <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                        <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                        <div class="w_span">
+                            <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                        </div>
+                        <div class="buy">
+                            <a href="">Mua hàng</a>
+                        </div>   
+                    </div>
+                    <div class="col-3 buy_hover buy_hover-details">
+                        <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                        <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                        <div class="w_span">
+                            <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                        </div>   
+                        <div class="buy">
+                            <a href="">Mua hàng</a>
+                        </div>   
+                    </div>
+                    <div class="col-3 buy_hover buy_hover-details">
+                        <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                        <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                        <div class="w_span">
+                            <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                        </div>   
+                        <div class="buy">
+                            <a href="">Mua hàng</a>
+                        </div>   
+                    </div>
+                    <div class="col-3 buy_hover buy_hover-details">
+                        <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                        <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                        <div class="w_span">
+                            <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                        </div>   
+                        <div class="buy">
+                            <a href="">Mua hàng</a>
+                        </div>   
+                    </div>
+                    <div class="col-3 buy_hover buy_hover-details">
+                        <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                        <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                        <div class="w_span">
+                            <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                        </div>   
+                        <div class="buy">
+                            <a href="">Mua hàng</a>
+                        </div>   
+                    </div>
+                    <div class="col-3 buy_hover buy_hover-details">
+                        <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
+                        <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
+                        <div class="w_span">
+                            <span style="color: #20c997;">250.000đ</span> <span style="text-decoration: line-through;">310.000đ</span>
+                        </div>   
+                        <div class="buy">
+                            <a href="">Mua hàng</a>
+                        </div>   
+                    </div> -->
             </div><br>
                 
 

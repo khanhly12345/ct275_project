@@ -107,10 +107,10 @@
                     $_POST['type'],
                     $_POST['id'],
                 ]);
-                $query2 = "UPDATE product set id_product=?";
+                $query2 = "UPDATE product_size set id_product=?";
                 $sth2 = $pdo->prepare($query2);
-                $sth->execute([$_POST['id_product']]);
-                if($sth == true && $th2) {
+                $sth2->execute([$_POST['id_product']]);
+                if($sth == true && $sth2) {
                     $_SESSION['update'] = "<div class='success'> Product Updated successfully. </div>";
                     echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/manager_product.php'</script>";
                 }

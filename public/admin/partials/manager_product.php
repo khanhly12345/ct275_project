@@ -41,8 +41,9 @@
                         try{
                             $query = "SELECT * FROM product";
                             $sth = $pdo->query($query);
-                            $count = 1;
+                            $count = 0;
                             while($row = $sth->fetch()) {
+                                $count++;
                             ?>
                                 <tr>
                                     <th scope="row"><?php echo $count;?></th>
@@ -59,25 +60,6 @@
                             echo $e->getMessage();
                         }
                     ?>
-                    
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
                 </tbody>
             </table>
         </div>

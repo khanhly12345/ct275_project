@@ -10,12 +10,12 @@
                         <br>
                     </div>
                     <div class="select">
-                            <li><a href="">Áo thun </a><i class="fa fa-angle-right fa-2x"></i></li>
-                            <li><a href="">Áo phông </a><i class="fa fa-angle-right fa-2x"></i></li>   
-                            <li><a href="">Áo sơ mi </a><i class="fa fa-angle-right fa-2x"></i></li>
-                            <li><a href="">Áo cộc tay </a><i class="fa fa-angle-right fa-2x"></i></li>
-                            <li><a href="">Sản phẩm mới </a><i class="fa fa-angle-right fa-2x"></i></li>
-                            <li><a href="">Xem thêm </a></li>
+                            <li><a href="#" class="filter" id="aothun" data-filter="aothun">Áo thun </a><i class="fa fa-angle-right fa-2x "></i></li>
+                            <li><a href="#" class="filter" id="aophong" data-filter="aophong">Áo phông </a><i class="fa fa-angle-right fa-2x "></i></li>   
+                            <li><a href="#" class="filter" id="aosomy" data-filter="aosomy">Áo sơ mi </a><i class="fa fa-angle-right fa-2x "></i></li>
+                            <li><a href="#" class="filter" id="aococtay" data-filter="aococtay">Áo cộc tay </a><i class="fa fa-angle-right fa-2x "></i></li>
+                            <li><a href="#" class="filter" id="sanphammoi" data-filter="sanphammoi">Sản phẩm mới </a><i class="fa fa-angle-right fa-2x "></i></li>
+                            <li><a href="#">Xem thêm </a></li>
                     </div>
                 </div>
                 <div class="col-9">
@@ -127,13 +127,18 @@
                  <?php 
                     for($page = 1; $page<= $number_of_page; $page++) {
                         ?>
-                            <li class="page-item"><a class="page-link" href="index.php?page=<?php echo $page?>"><?php echo $page?></a></li>
+                            <li onlick="filter(<?php echo $page?>)" class="page-item" ><a data-nav=<?php echo $page?> class="page-link" href="index.php?page=<?php echo $page?>"><?php echo $page?></a></li>
                         <?php
                         }
                  ?>   
             </ul>
-          </nav>
+        </nav>
     </div>  
     </main><hr>
     <!-- footer -->
     <?php include "../partialss/footer.php"?>
+    <script>
+        window.onload = function(){
+            filter(<?php echo $_GET['page']?>)
+        }
+    </script>

@@ -750,3 +750,12 @@ ul {
     background-color: #139971;
     color: #ece9e9;
 }
+
+.active {
+    color: #0fa87a !important;
+}
+
+.active_nagination {
+    background: blue !important;
+    color: white !important;
+}
