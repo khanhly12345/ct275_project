@@ -10,42 +10,49 @@
       ?>
       <hr>
       <form action="" method="POST" class="form_add" enctype="multipart/form-data">
-        <label for="ma_sp">Mã sản phẩm:</label>
-        <input type="text" id="ma_sp" name="ma_sp"><br>
-
-        <label for="ten_sp">Tên sản phẩm:</label>
-        <input type="text" id="ten_sp" name="ten_sp"><br>
-
-        <label for="img">Hình ảnh:</label>
-        <input type="file" name="img" id="img"><br>
-
-        <label for="gia">Giá:</label>
-        <input type="text" id="gia" name="gia"><br>
-
-        <label for="type">Kiểu:</label>
-        <input type="text" id="type" name="type"><br>
-
-        <fieldset>
-          <legend>Kích thước:</legend>
-
-          <div>
-            <label for="s">Size S:</label>
-            <input type="text" id="s" name="s">
-          </div>
-
-          <div>
-            <label for="m">Size M:</label>
-            <input type="text" id="m" name="m">
-          </div>
-
-          <div>
-            <label for="l">Size L:</label>
-            <input type="text" id="l" name="l">
-          </div>
-
-        </fieldset>
-
-        <input type="submit" class="btn btn-primary" name="submit" value="Thêm sản phẩm">
+        <table>
+          <tbody>
+                <tr>
+                    <th><label for="ma_sp">Mã sản phẩm:</label></th>
+                    <th><input type="text" id="ma_sp" name="ma_sp"><br></th>
+                </tr>
+                <tr>
+                    <th><label for="ten_sp">Tên sản phẩm:</label></th>
+                    <th><input type="text" id="ten_sp" name="ten_sp"><br></th>
+                </tr>
+                <tr>
+                    <th><label for="img">Hình ảnh:</label></th>
+                    <th><input type="file" name="img" id="img"><br></th>
+                </tr>
+                <tr>
+                    <th><label for="gia">Giá:</label></th>
+                    <th><input type="text" id="gia" name="gia"><br></th>
+                </tr>
+                <tr>
+                    <th><label for="type">Kiểu:</label></th>
+                    <th><input type="text" id="type" name="type"><br></th>
+                </tr>
+                <tr>
+                    <th>Kích thước:</th>
+                </tr>
+                <tr>
+                  <th><label for="s">Size S:</label></th>
+                  <th><input type="text" id="s" name="s"></th>
+                </tr>
+                <tr>
+                  <th><label for="m">Size M:</label></th>
+                  <th><input type="text" id="m" name="m"></th>
+                </tr>
+                <tr>
+                  <th><label for="l">Size L:</label></th>
+                  <th><input type="text" id="l" name="l"></th>
+                </tr>
+                <tr>
+                  <th><input type="submit" class="btn btn-primary" name="submit" value="Thêm sản phẩm"></th>
+                </tr>
+          </tbody>
+        </table>
+        
       </form>
       <?php
       if (isset($_POST['submit'])) {

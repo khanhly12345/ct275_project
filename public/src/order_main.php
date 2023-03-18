@@ -90,7 +90,7 @@
                                     <th colspan="5" style="color : red;">
                                     Tổng:  <?php echo  currency_format($total)?>
                                     </th>
-                                    <th><a href="http://localhost:8080/Project_ct275/public/admin/partials/delete_order.php?id=<?php echo $row['id_user']?>" style="text-decoration: none; position: relative; left: 100px;" class="btn btn-primary">Hủy đơn hàng</a></th>
+                                    <th><a href="http://localhost:8080/Project_ct275/public/src/delete_order_main.php?id=<?php echo $row['id_user']?>" style="text-decoration: none; position: relative; left: 100px;" class="btn btn-primary">Hủy đơn hàng</a></th>
                                 </tr>
                             <tr>
                             <?php

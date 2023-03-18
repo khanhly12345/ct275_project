@@ -22,32 +22,32 @@
     <div class="body body-details">
         <div class="container">
             <div class="row ">
-                <div class="col-6">
+                <div class="col-3">
                     <ul class="breadcrumb">					
                         <li class="home">
                             <a style="text-decoration: none;" href=""><span style="color: black;" >Trang chủ</span></a>						
                             <span class="mr_lr"><i class="fas fa-chervon-right"></i></span>
                         </li>
                         
-                        <li>
+                        <!-- <li>
                             <a style="text-decoration: none;" class="changeurl" href=""><span style="color: black;" >Áo cộc tay</span></a>						
                             <span class="mr_lr"><i class="fas fa-chervon-right"></i></span>
-                        </li>
+                        </li> -->
                         
-                        <li><span style="color: #20c997;">Áo phông vitage trắng</span></li>
+                        <li><span style="color: #20c997;"><?php echo $row['titte']?></span></li>
                         
                     </ul>
                 </div>
                 <hr>
                 <div class="container">
-                    <div class="row row-before">
+                    <div class="row row-before" style="margin-bottom: 20px;">
                         <div class="col-5 colimg1">
                             <img style="height: 500px; width: 500px;" src="../admin/upload_img/product/<?php echo $row['img']?>" alt="">
                         </div>
                         <div class="col-7">
                             <div class="row row-info">
                                 <p1 style="font-size: larger;"><?php echo $row['titte']?></p1>
-                            <div class="w_span">
+                            <div class="w_span" style="    margin: 20px 0 20px 0;">
                                 <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;">310.000đ</span>
                             </div>
                             <br>
@@ -64,7 +64,7 @@
                                     </select>
                                 </div>
                                 <div class="row row-qualyti">
-                                    <label>Số lượng: </label>
+                                    <label style="margin: 20px 0 20px 0;">Số lượng: </label>
                                     <div class="form-group form_button_details">
                                     <div class="form_product_content">
                                         <div class="soluong soluong_type_1">
@@ -79,12 +79,12 @@
                                         </div>
                                         <input type="hidden" name="id" value="<?php echo $row[0]?>">
                                         <div class="button_actions ">
-                                            <button type="submit" name="submit">
+                                            <button type="submit" name="submit" style="    width: 30%;border: none;color: white;">
                                                 <span class="text_1">Cho vào giỏ hàng</span>
                                             </button>	                                       
                                         </div>
-                                        
                                 </div>
+                                <hr>
                             </form>
                             <br>
                             <?php
@@ -111,9 +111,14 @@
                                 }
                             ?>
                             </div>
-                            <p1>tags: Áo phông</p1>
-                                <p>share: facebook Pinterest tweeter Google</p>
-                                
+                            <p1>tags: nguenkhanhly@gmail.com</p1>
+                            <ul class="share">
+                                <li><a style="font-size:15px">share:</a></li>
+                                <li><a><i class="fab fa-facebook-f" style="color: blue"></i></a></li>
+                                <li><a><i class="fab fa-twitter" style="color: rgb(106, 106, 245)"></i></a></li>
+                                <li><a><i class="fab fa-instagram" style="color: orange"></i></a></li>
+                                <li><a><i class="fab fa-google" style="color: rgb(73, 247, 73)"></i></a></li>
+                            </ul>
                         </div>                  
                         </div>
                     </div>

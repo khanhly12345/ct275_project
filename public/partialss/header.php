@@ -68,7 +68,8 @@
                 <div class="col-3 d-flex justify-content-end">
                     <ul class="right_header">
                         <li>
-                            <a href="http://localhost:8080/Project_ct275/public/src/order_main.php">Đơn hàng</a>
+                            <a href="http://localhost:8080/Project_ct275/public/src/order_main.php" style="color: #0fa87a;">Đơn hàng <span>
+                            </span></a>
                         </li>
                     </ul>
                 </div>
@@ -138,10 +139,10 @@
             <div class="row-nav">
                 <div class="col-6 ">
                     <ul class="nav-links item_big">
-                        <a class="" style="color: rgb(11, 145, 116) !important;" href="http://localhost:8080/Project_ct275/public/src/">Trang Chủ</a>
-                        <a class="navstyle " href="../src/gioithieu.php">Giới Thiệu</a>
+                        <a class="trangchu"  href="../src/index.php?id=trangchu">Trang Chủ</a>
+                        <a class="navstyle gioithieu" href="../src/gioithieu.php?id=gioithieu">Giới Thiệu</a>
                         <li>
-                            <a class="nav_links-has" href="">
+                            <a class="nav_links-has sanpham" href="../src/index.php?id=sanpham">
                                 Sản Phẩm
                                  <i style="height: 20%;" class="fa fa-chevron-down"></i>
                             </a>
@@ -154,8 +155,8 @@
                             
                             </ul>       
                         </li>            
-                            <a class="navstyle " href="../src/news.php">Tin Tức</a>
-                            <a class="navstyle " href="../src/contact.php">Liên Hệ</a>
+                            <a class="navstyle tintuc" href="../src/news.php?id=tintuc">Tin Tức</a>
+                            <a class="navstyle lienhe" href="../src/contact.php?id=lienhe">Liên Hệ</a>
                     </ul>
                 </div>
                 <div class="col-6">

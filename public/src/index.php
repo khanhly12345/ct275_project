@@ -45,7 +45,7 @@
                             
                         }
 
-                        $results_per_page = 2;
+                        $results_per_page = 10;
 
                         $page_first_result = ($page-1) * $results_per_page; 
 
@@ -61,7 +61,7 @@
                         while($row = $sth->fetch()){
                             ?>
                             <div class="col-3 buy_hover" data-items="<?php echo $row['type']?>">
-                                    <img style="height: 70%;" src="../admin/upload_img/product/<?php echo $row['img']?>" alt="">
+                                    <img style="height: 320px;" src="../admin/upload_img/product/<?php echo $row['img']?>" alt="">
                                     <a href=""style="text-decoration:none;"><p><?php echo $row['titte']?></p></a>
                                     <div class="w_span">
                                         <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;">310.000đ</span>
@@ -79,7 +79,7 @@
                 
             </div><br>
             <div class="row row-clothers">
-                <div class="col-3 buy_hover">
+                <!-- <div class="col-3 buy_hover">
                     <img style="height: 70%;" src="../images/img_clothers/decedd324f08b65fc7a831f6a9ab8449.jpg" alt="">
                     <a href=""style="text-decoration:none;"><p>Áo sơ mi Asos</p></a>
                     <div class="w_span">
@@ -118,7 +118,7 @@
                     <div class="buy">
                         <a href="">Mua hàng</a>
                     </div>    
-                </div>
+                </div> -->
             </div><br>
         </div>
 
@@ -137,8 +137,3 @@
     </main><hr>
     <!-- footer -->
     <?php include "../partialss/footer.php"?>
-    <script>
-        window.onload = function(){
-            filter(<?php echo $_GET['page']?>)
-        }
-    </script>

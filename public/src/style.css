@@ -355,7 +355,7 @@ ul {
 
 
 .row-clothers {
-    height: 450px;
+    
 }
 
 .row-clothers img{
@@ -498,11 +498,8 @@ ul {
 .body-details{
     height: 1000px;
 }
-.buy_hover-details{
 
-}
 .row-splq {
-   
     overflow: auto ;
 }
 
@@ -532,8 +529,8 @@ ul {
 
 }
 .button_actions button:hover{
-    background-color: #fdfdfd;
-    color: #252525;
+    background: #6eb39e;
+    color: black;
 }
 .soluong_type_1{
     display: flex;
@@ -559,12 +556,10 @@ ul {
     margin-left: -12px;
     color: #fff;
     width: fit-content;
-    padding: 5px;
+    padding: 10px 20px;
+    border: none;
+}
 
-}
-.text-intro h2{
-    
-}
 .button_actions {
     padding: 20px 0 0 0;
     position: relative;
@@ -758,4 +753,15 @@ ul {
 .active_nagination {
     background: blue !important;
     color: white !important;
+}
+
+.share {
+    display: flex;
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.share li {
+    padding-right: 10px;
+    font-size: 18px;
 }

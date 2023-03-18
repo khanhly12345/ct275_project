@@ -19,15 +19,21 @@ for(let i = 0; i<filters.length; i++) {
     })
 }
 
-// 
+// active
 let filter = (data) => {
+    
     let item = document.getElementsByClassName("page-link");
     let x = "<p style='color: red; margin-bottom:0;'>";
     let y = "</p>";
     item[data-1].innerHTML = x+data+y;
-    console.log(item[data]);
+    
 }
 
+// navigation
 
-// active
 
+let navigation = (data) => { 
+    let nav = document.getElementsByClassName(data);
+    nav[0].classList.add("active");
+    console.log(nav);
+}

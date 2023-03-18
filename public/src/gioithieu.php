@@ -24,4 +24,4 @@
         </div> 
     </main><hr>
     <!-- footer -->
-    <?php include "../partialss/header.php"?> 
+    <?php include "../partialss/footer.php"?> 
