@@ -15,9 +15,8 @@ include "../connect.php";
     <header class="header">
         <div class="wrap_header">
             <ul>
-                <li><a href="">Users</a></li>
-                <li><a href="">Product</a></li>
-                <li><a href="">Order</a></li>
+                <li><a href="manager_product.php">Product</a></li>
+                <li><a href="order.php">Order</a></li>
             </ul>
         </div>
     </header>
