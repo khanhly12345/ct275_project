@@ -48,7 +48,7 @@
                             <div class="row row-info">
                                 <p1 style="font-size: larger;"><?php echo $row['titte']?></p1>
                             <div class="w_span" style="    margin: 20px 0 20px 0;">
-                                <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;">310.000đ</span>
+                                <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;"><?php echo currency_format($row['price'] + ($row['price'] * 0.1))?></span>
                             </div>
                             <br>
                             <p style="font-size: small;">Mô tả bản cập nhật</p>

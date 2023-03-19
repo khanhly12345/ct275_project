@@ -60,11 +60,11 @@
                         $sth->execute();
                         while($row = $sth->fetch()){
                             ?>
-                            <div class="col-3 buy_hover" data-items="<?php echo $row['type']?>">
+                            <div class="col-3 buy_hover" style="margin-top: 20px" data-items="<?php echo $row['type']?>">
                                     <img style="height: 320px;" src="../admin/upload_img/product/<?php echo $row['img']?>" alt="">
                                     <a href=""style="text-decoration:none;"><p><?php echo $row['titte']?></p></a>
                                     <div class="w_span">
-                                        <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;">310.000đ</span>
+                                        <span style="color: #20c997;"><?php echo currency_format($row['price'])?></span> <span style="text-decoration: line-through;"><?php echo currency_format($row['price'] + ($row['price'] * 0.1))?></span>
                                     </div>
                                     <div class="buy">
                                         <a href="details.php?id=<?php echo $row['id_product']?>">Mua hàng</a>

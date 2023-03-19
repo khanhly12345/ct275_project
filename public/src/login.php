@@ -65,7 +65,7 @@
                                         if($count > 0) {
                                             $_SESSION['check_login'] = "<div class='success'> Đăng nhập thành công </div>";
                                             $_SESSION['user'] = $row['id'];
-                                            $_SESSION['exit'] = "<a style='position: relative; top:10px;' href='http://localhost:8080/Project_ct275/public/src/logout.php'> Thoát </a>"; 
+                                            // $_SESSION['exit'] = "<a style='position: relative; top:10px;' href='http://localhost:8080/Project_ct275/public/src/logout.php'> Thoát </a>"; 
                                             echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/'</script>"; 
                                         }else{
                                             $_SESSION['check_login'] = "<div class='error'> Tài khoản hoặc mật khẩu không đúng! </div>";

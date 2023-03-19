@@ -1,10 +1,12 @@
 
-<?php 
-    include "../admin/connect.php";
-?>
-<?php
-
-
+<?php include "../admin/connect.php";
+    if(isset($_SESSION['user'])) {
+        setcookie("user", $_SESSION["user"], time() + 3600,"/");
+    }
+    if(isset($_COOKIE['user'])) {
+        $_SESSION["user"] = $_COOKIE['user'];
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +33,7 @@
                             
                             <?php
                                 if(isset($_SESSION['user'])) {
+                                    
                                     $id = $_SESSION['user'];
                                     $query = "SELECT id, fullname FROM users WHERE id = $id";
                                     $sth = $pdo->query($query);
@@ -49,7 +52,8 @@
                             <a class="login_signi" href="http://localhost:8080/Project_ct275/public/src/login.php">Đăng nhập</a>
 
                                 <?php 
-                                    if(isset($_SESSION['exit'])) {
+                                    if(isset($_SESSION['user'])) {
+                                        $_SESSION['exit'] = "<a style='position: relative; top:10px;' href='http://localhost:8080/Project_ct275/public/src/logout.php'> Thoát </a>"; 
                                         echo $_SESSION['exit'];
                                         if($sth == true) {
                                             echo "<script>
