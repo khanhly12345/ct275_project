@@ -1,5 +1,5 @@
 <?php include "../partialss/header.php"?>
-    <main><div class="body">
+    <main><div class="body" style="margin-bottom: 50px">
             <div class="container">
                 <section class="vh-100 bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
@@ -16,43 +16,43 @@
                   unset($_SESSION['check_passwork']);
                 }
               ?>
-              <form action="" method="POST" style="padding-left: 40px;">
+              <form action="" method="POST" id="validation" style="padding-left: 40px;">
               
                 <div class="form-outline">
                   <label class="form-label" for="form3Example1cg">Họ Tên</label>
-                  <input style="font-size: x-small;"  type="text" id="form3Example1cg" class="form-control form-control-lg" name="fullname"/>                  
+                  <input style="font-size: x-small;"  type="text" id="form3Example1cg" class="form-control form-control-lg" name="fullname" required/>                  
                 </div>
 
                 <div class="form-outline">
                   <label class="form-label" for="form3Example3cg">Tài khoản</label>
-                  <input style="font-size: x-small;"  type="text" id="form3Example3cg" class="form-control form-control-lg" name="account"/>
+                  <input style="font-size: x-small;"  type="text" id="form3Example3cg" class="form-control form-control-lg" name="account" required/>
                 </div>
 
                 <div class="form-outline">
                   <label class="form-label" for="form3Example4cg">Mật khẩu</label>
-                  <input style="font-size: x-small;"  type="password" id="form3Example4cg" class="form-control form-control-lg" name="password"/>
+                  <input style="font-size: x-small;"  type="password" id="form3Example4cg" class="form-control form-control-lg" name="password" required/>
                 </div>
 
                 <div class="form-outline">
                   <label class="form-label" for="form3Example4cdg">Nhập lại mật khẩu</label>
-                  <input style="font-size: x-small;"  type="password" id="form3Example4cdg" class="form-control form-control-lg" name="same_password"/>
+                  <input style="font-size: x-small;"  type="password" id="form3Example4cdg" class="form-control form-control-lg" name="same_password" required/>
                 </div>
 
                 <div class="form-outline">
-                  <label class="form-label" for="form3Example4cdg">Nhập số điện thoại</label>
-                  <input style="font-size: x-small;"  type="text" id="form3Example4cdg" class="form-control form-control-lg" name="sdt"/>
+                  <label class="form-label" for="form3Example4cd">Nhập số điện thoại</label>
+                  <input style="font-size: x-small;"  type="text" id="form3Example4cd" class="form-control form-control-lg" name="sdt" required/>
                 </div>
 
                 <div class="form-outline">
-                  <label class="form-label" for="form3Example4cdg">Nhập tỉnh thành</label>
-                  <input style="font-size: x-small;" type="text" id="form3Example4cdg" class="form-control form-control-lg" name="city"/>
+                  <label class="form-label" for="form3Example4">Nhập tỉnh thành</label>
+                  <input style="font-size: x-small;" type="text" id="form3Example4" class="form-control form-control-lg" name="city" required/>
                 </div>
                 <div class="form-outline">
-                  <label class="form-label" for="form3Example4cdg">Nhập huyện</label>
-                  <input style="font-size: x-small;"  type="text" id="form3Example4cdg" class="form-control form-control-lg" name="district"/>
+                  <label class="form-label" for="form3Example4c">Nhập huyện</label>
+                  <input style="font-size: x-small;"  type="text" id="form3Example4c" class="form-control form-control-lg" name="district" required/>
                 </div>
                 <div class="form-check d-flex justify-content-center mb-3">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" name="agree" required/>
                   <label class="form-check-label" for="form2Example3g">
                     Tôi đồng ý tất cả điều khoản của <a href="#!" class="text-body"><u>đội dịch vụ</u></a>
                   </label>
@@ -63,7 +63,7 @@
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-white">Đăng ký</button>
                 </div>
 
-                <p class="text-center text-muted mb-0">Bạn đã có tài khoản? <a href="#!"
+                <p class="text-center text-muted mb-0">Bạn đã có tài khoản? <a href="/Project_ct275/public/src/login.php"
                     class="fw-bold text-body"><u>Đăng nhập tại đây!</u></a></p>
 
               </form>
@@ -94,6 +94,7 @@
                         ]);
                         if($sth == true) {
                           $_SESSION['check_passwork'] = "<div class='success'> Đăng ký thành công </div>";
+                          echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/reg.php'</script>";
                         }
                       }
                   }

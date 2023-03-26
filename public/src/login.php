@@ -15,7 +15,7 @@
                       <div class="col-md-6 col-lg-7 d-flex align-items-center">
                         <div class="card-body p-4 p-lg-5 text-black">
           
-                            <form action="" method="POST">
+                            <form action="" method="POST" id="formlogin">
                                 <div class="d-flex align-items-center mb-3 pb-1">
                                 <i style="padding-right:5px ;"><img src="../images/logo/logo.webp" alt=""></i>
                                 <span class="h1 fw-bold mb-0">VEMOUSE</span>
@@ -34,12 +34,12 @@
                                 ?>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form2Example17">Tài khoản</label>
-                                    <input type="text" id="form2Example17" class="form-control form-control-lg" name="account" placeholder="Nhập tài khoản"/>
+                                    <input type="text" id="form2Example17" class="form-control form-control-lg" name="account" placeholder="Nhập tài khoản" required/>
                                 </div>
             
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form2Example27">Mật Khẩu</label>
-                                    <input type="password" id="form2Example27" class="form-control form-control-lg"  name="password" placeholder="Nhập mật khẩu"/>
+                                    <input type="password" id="form2Example27" class="form-control form-control-lg"  name="password" placeholder="Nhập mật khẩu" required/>
                                 </div>
             
                                 <div class="pt-1 mb-4">
@@ -47,7 +47,7 @@
                                 </div>
             
                                 <a style="text-decoration: none;" class="small text-muted" href="#!">Quên mật khẩu?</a>
-                                <p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn chưa có tài khoản? <a style="text-decoration: none;" href="#!"
+                                <p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn chưa có tài khoản? <a style="text-decoration: none;" href="/Project_ct275/public/src/reg.php"
                                     style="color: #393f81;">Đăng kí tại đây</a></p>
                                 <a style="text-decoration: none;" href="#!" class="small text-muted">Điều khoản sử dụng.</a>
                                 <a style="text-decoration: none;" href="#!" class="small text-muted">Chính sách bảo mật
