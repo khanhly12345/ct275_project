@@ -93,7 +93,17 @@
                                     $id_user = $_SESSION['user'];
                                     $size = $_POST['size'];
                                     $quantity = $_POST['quantity'];
+                                    // check cart
+                                    echo $id;
+                                    $query2 = "select * from cart where id_product =$id AND size = '$size' AND id_user = $id_user";
+                                    $sth2 = $pdo->query($query2);
+                                    $count = $sth2->rowCount();
+                                    if($count > 0) {
+                                        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/cart.php'</script>";
+                                        die();
+                                    }
                                     try{
+                                        
                                         $query = "INSERT INTO cart (id_user, id_product, size, quantity) VALUES (?,?,?,?);";
                                         $sth = $pdo->prepare($query);
                                         $sth->execute([

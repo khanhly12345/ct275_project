@@ -1,5 +1,9 @@
 <?php
 include "../connect.php";
+if(!isset($_SESSION['login'])) {
+    $_SESSION['check_login'] = "<div class='error'>You need to login to access admin! </div>";
+    echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/login.php'</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +19,11 @@ include "../connect.php";
     <header class="header">
         <div class="wrap_header">
             <ul>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="admin.php">Admin</a></li>
                 <li><a href="manager_product.php">Product</a></li>
                 <li><a href="order.php">Order</a></li>
+                <li><a href="logout.php">LogOut</a></li>
             </ul>
         </div>
     </header>

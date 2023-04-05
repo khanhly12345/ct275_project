@@ -11,15 +11,6 @@
         ?>
         <table class="table">
             <thead>
-                <tr>
-                    <!-- <th scope="col">S.N</th>
-                    <th scope="col">Thông tin khách hàng</th>
-                    <th scope="col">hinh ảnh</th>
-                    <th scope="col">tên sản phẩm</th>
-                    <th scope="col">số lượng</th>
-                    <th scope="col">tổng</th>
-                    <th scope="col">ngày tạo</th> -->
-                </tr>
             </thead>
             <tbody>
                 <?php 
@@ -34,14 +25,15 @@
                 <?php 
                     try{
                             $n = 0;
-                            $query = "SELECT * FROM ordered o join users u on o.id_user = u.id";
+                            $query = "SELECT * FROM ordered o join order_items o_i on o.id_order = o_i.id join users u on u.id = o_i.user_id";
                             $sth = $pdo->query($query);
                             $sth->execute();
                             $temp = 0;
                             $total = 0;
+                            // print_r($row = $sth->fetch());
                             while($row = $sth->fetch()) {
-                                if($temp != $row['id_user']) {
-                                    $temp = $row['id_user'];
+                                if($temp != $row[1]) {
+                                    $temp = $row[1];
                                     $n++;
                                 ?>
                                 <tr>
@@ -52,12 +44,13 @@
                                         <?php echo  'Tên: ' . $row['fullname'] . "<br>". 'SĐT: '. $row['phone'].'<br>'. 'Thành Phố: ' . $row['city'] . "<br>". 'Huyện: ' . $row['district']?>
                                     </th>
                                 <?php
-                                    $query2 = "SELECT * FROM ordered o join product p on o.id_product = p.id where o.id_user = $temp";  
+                                    $query2 = "SELECT * FROM ordered o join order_items o_i on o.id_order = o_i.id join product p on p.id = o.id_product where o.id_order = $temp";  
                                     $sth2 = $pdo->query($query2);
                                     $sth2->execute();
                                     $temp2 = 0;
                                     while($row2 = $sth2->fetch()) {
-                                        $total = $total + ($row2['price'] * $row2['quantity']);
+                                        $total = $row2['total'];
+                                        // $total = $total + ($row2['price'] * $row2['quantity']);
                                     ?>
                                     <tr>
                                         <th><img src="../upload_img/product/<?php echo $row2['img']?>" style="width: 90px">
@@ -87,7 +80,7 @@
                                     <th colspan="4" style="color : red;">
                                     Tổng:  <?php echo  currency_format($total)?>
                                     </th>
-                                    <th><a href="http://localhost:8080/Project_ct275/public/admin/partials/delete_order.php?id=<?php echo $row['id_user']?>" style="text-decoration: none;" class="btn btn-primary">Xóa đơn hàng</a></th>
+                                    <th><a href="delete_order.php?id=<?php echo $row[1]?>" style="text-decoration: none;" class="btn btn-primary">Xóa đơn hàng</a></th>
                                 </tr>
                             <tr>
                             <?php
