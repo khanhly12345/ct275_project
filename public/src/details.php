@@ -150,7 +150,93 @@
                     <p>Phong cách thời trang nam giới nói riêng luôn có sự thay đổi theo thời gian. Tuy nhiên, những trang phục thuộc diện thì vẫn có được chỗ đứng cho mình trong lòng công chúng. Món đồ mà chúng tôi đang muốn nói đến ở đây là áo sơmi trắng. Cho dù phong cách ăn mặc của các chàng trai là đơn giản hay phức tạp, lịch lãm hay bụi bặm thì áo phông trắng luôn là món đồ mà bạn không thể bỏ qua</p><br>
                     <p>Nam giới từ xưa đến nay vẫn được hưởng ưu ái "mặc thế nào cũng được". Chính vì điều này mà đôi khi phái mạnh trở nên cẩu thả với chính mình. Nhưng ngày nay, mọi thứ đã thay đổi. Việc cẩu thả trong ăn mặc sẽ khiến bạn trở thành một anh chàng lôi thôi, luộm thuộm trong mắt mọi người. Mặc sơmi trắng khiến các chàng trai trở lên thanh lịch và nam tính hơn bao giờ hết. Có nhiều cách "hay ho" để chúng ta biến tầu trang phục này.</p><br>
                     <p>Asos là thương hiệu thời trang bình dân nổi tiếng của Anh được thành lập năm 2000 bởi Nick Robertson dưới hình thức ban đầu là trang web bán hàng thời trang trực tuyến Asos.com dành cho độ tuổi từ 18-34 tuổi. Tuy nhiên, khi càng phát triển, Asos đã thay đổi đối tượng khách hàng khi nhắm đến đa dạng các đối tượng từ phụ nữ, đàn ông, trẻ em cho tới thanh thiếu niên và cung cấp các mặt hàng chủ yếu như giầy dép, phụ kiện, trang sức, quần áo và mỹ phẩm. Phong cách thời trang của Asos chủ yếu được lấy cảm hứng từ những người nổi tiếng để tạo ra những bộ sản phẩm mang tính xu hướng, thời thượng với giá tiêu dùng bình dân nhất.</p><br>
-                </div><hr>
+                </div>
+                <!-- comment -->
+                <div class="comment" style="margin: 20px 0 20px 0">
+                    <div class="wrap_comment">
+                        <h3>Ý Kiến Người Dùng: </h3>
+                        <form action="details.php?id=<?php echo $_GET['id']?>" method="POST">
+                            <textarea style="width: 100%; height: 100px !important" name="comment"></textarea>
+                            <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
+                            <button type="submit" name="submit_comment" class="btn btn-primary">Bình Luận</button>
+                        </form>
+                        
+                    </div>
+                </div>
+                <?php 
+                    if(isset($_GET['id']) AND isset($_SESSION['user'])) {
+                       if(isset($_POST['submit_comment'])) {
+                            $query = "INSERT INTO comment (id_user, id_product, comment) VALUES (?, ?, ?)";
+                            $sth = $pdo->prepare($query);
+                            $sth->execute([
+                                $_SESSION['user'],
+                                $_POST['id'],
+                                $_POST['comment']
+                            ]);
+                       }
+                    }
+                ?>
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Latest Comments</h4>
+                            </div>
+                            <div class="comment-widgets" style="margin-bottom: 20px">
+                                <!-- Comment Row -->
+                                <?php 
+                                    if(isset($_GET['id'])) {
+                                        $id = $_GET['id'];
+                                        $query = "SELECT * FROM users u join comment c on u.id = c.id_user WHERE id_product=$id";
+                                        $sth = $pdo->query($query);
+                                        $sth->execute();
+                                        while($row = $sth->fetch()) {
+                                            ?>
+                                                <div class="d-flex flex-row comment-row m-t-0">
+                                                    <div class="p-2"><img src="https://i.imgur.com/Ur43esv.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                                    <div class="comment-text w-100">
+                                                        <h6 class="font-medium"><?php echo $row['fullname']?></h6> <span class="m-b-15 d-block"><?php echo $row['comment']?> </span>
+                                                        <div class="comment-footer"> <span class="text-muted float-right"><?php echo $row['date']?></span>
+                                                            <?php 
+                                                                if($row['id_user'] == $_SESSION['user']) {
+                                                                    ?>
+                                                                        <a href="delete_comment.php?id_comment=<?php echo $row['id']?>&id_product=<?php echo $id?>" class="btn btn-danger">Delete</a> 
+                                                                    <?php
+                                                                }
+                                                            ?>  
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            <?php
+                                        }
+                                    }
+                                ?>
+                               
+                                
+                                <!-- Comment Row -->
+                                <div class="d-flex flex-row comment-row">
+                                    <div class="p-2"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="comment-text active w-100">
+                                        <h6 class="font-medium">Michael Hussey</h6> <span class="m-b-15 d-block">Thanks bbbootstrap.com for providing such useful snippets. </span>
+                                        <div class="comment-footer"> <span class="text-muted float-right">2023-03-31 09:11:08</span>   </div>
+                                    </div>
+                                </div> 
+                                <!-- Comment Row -->
+                                <div class="d-flex flex-row comment-row">
+                                    <div class="p-2"><img src="https://i.imgur.com/J6l19aF.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium">Johnathan Doeting</h6> <span class="m-b-15 d-block">Great industry leaders are not the real heroes of stock market. </span>
+                                        <div class="comment-footer"> <span class="text-muted float-right">2023-03-31 09:11:08</span>   </div>
+                                    </div>
+                                </div>
+                            </div> <!-- Card -->
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- comment  -->
                 <h1 style="font-size: large; color:black" >SẢN PHẨM LIÊN QUAN</h1>
                 <hr style="border: 3px solid green;" >
                 <div class="row row-clothers row-splq">
