@@ -50,6 +50,27 @@
                 </div><hr>
                 <p style="margin-left: 40px; font-weight: 500; font-size: x-large;">TIN TỨC</p><br> -->
                 <script>
+                    fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=XSW5zMVC0tkBqj81Bcek5ftLGn2Cvr4k')
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(news => {
+                        // let div = document.getElementsByClassName("root")[0];
+                        // div.innerHTML += `<img src="`+news.results[0]['media'][0]['media-metadata'][2].url+`"/>`;
+                        let div = document.getElementsByClassName("root")[0];
+                        for(let i=0; i<9; i++ )  {
+                            div.innerHTML += `<div class="col-4">
+                            <a href="`+news.results[i].url+`"><img style="width: 400px; height: 210px;" src="` + news.results[i]['media'][0]['media-metadata'][2].url +`" alt=""></a><br><br>
+                            <p><a style="text-decoration: none; color: rgb(0, 0, 0);" href=""></a></p>
+                            <p style="font-size: small;">The leaked documents come as Ukraine has been preparing for a spring offensive as part of an effort to reclaim territory in the east and the south of the country.</p>
+                            <p style="font-size: small;">`+news.results[i].updated+`</p>
+                            <a href="`+news.results[i].url+`" class="btn btn-primary">Đọc Tiếp</a>
+                            </div>`
+                        }
+                        
+                    })
+                </script>
+                <!-- <script>
                 fetch('https://newsapi.org/v2/everything?q=tesla&from=2023-03-06&sortBy=publishedAt&apiKey=6f27c3ce003645d489b3fc30bd801ed5')
                     .then(response => {
                         return response.json();
@@ -68,7 +89,7 @@
                         
                         
                     })
-                </script>
+                </script> -->
                 <!-- <div class="row row-news">
                     <div class="col-4">
                         <a href=""><img style="width: 400px; height: 210px;" src="../images/img_news/thoi-trang-tham-hoa.webp" alt=""></a><br><br>
