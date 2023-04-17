@@ -52,7 +52,7 @@
                 <script>
                     fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=XSW5zMVC0tkBqj81Bcek5ftLGn2Cvr4k')
                     .then(response => {
-                        return response.json();
+                        return response.json(); 
                     })
                     .then(news => {
                         // let div = document.getElementsByClassName("root")[0];
