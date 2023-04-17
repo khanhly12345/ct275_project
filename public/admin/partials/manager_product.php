@@ -50,7 +50,7 @@
                                     <td><?php echo $row['id_product'];?></td>
                                     <td style="width: 20%; position: relative;"> <img style="width: 50%;" src="../upload_img/product/<?php echo $row['img'];?>" alt=""></td>
                                     <td><?php echo $row['titte'];?></td>
-                                    <td><?php echo  currency_format($row['price']);?></td>
+                                    <td><?php echo $row['price'];?></td>
                                     <td><?php echo $row['type'];?></td>
                                     <td><a href="edit_product.php?id=<?php echo $row['id']?>" class="btn btn-warning">Edit</a> <a href="delete_product.php?id=<?php echo $row['id_product']?>&img=<?php echo $row['img'];?>" class="btn btn-danger">Delete</a></td>
                                 </tr>

@@ -35,19 +35,13 @@
                             <li><a href="">Xem thêm </a><i class="fa fa-angle-right fa-2x"></i></li>
                     </div>
                 </div> -->
-            <div class="row root">
-                <div class="col-4 col-intro">
-                        <a style="text-decoration: none ; color: black;" href="">Trang chủ</a> 
-                        <p class="text-news" style="color: #20c997; " href="">Tin tức</p>
-                    </div><hr>
-                    <p style="margin-left: 40px; font-weight: 500; font-size: x-large;">TIN TỨC</p><br>
-                </div>
 
-            <!-- <div class="col-12"> -->
-                <!-- <div class="col-4 col-intro">
+            <div class="col-12">
+                <div class="col-4 col-intro">
                     <a style="text-decoration: none ; color: black;" href="">Trang chủ</a> 
                     <p class="text-news" style="color: #20c997; " href="">Tin tức</p>
                 </div><hr>
+<<<<<<< HEAD
                 <p style="margin-left: 40px; font-weight: 500; font-size: x-large;">TIN TỨC</p><br> -->
                 <script>
                     fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=XSW5zMVC0tkBqj81Bcek5ftLGn2Cvr4k')
@@ -91,6 +85,10 @@
                     })
                 </script> -->
                 <!-- <div class="row row-news">
+=======
+                <p style="margin-left: 40px; font-weight: 500; font-size: x-large;">TIN TỨC</p><br>
+                <div class="row row-news">
+>>>>>>> a15e31dbee55b0271df5cc7cfbaa22710b5b93ca
                     <div class="col-4">
                         <a href=""><img style="width: 400px; height: 210px;" src="../images/img_news/thoi-trang-tham-hoa.webp" alt=""></a><br><br>
                         <p><a style="text-decoration: none; color: rgb(0, 0, 0);" href="">Khi thời trang là thảm họa thì sẽ như thế nào ?</a></p>
@@ -131,8 +129,8 @@
                     </div>
                     <div class="col-4">
                         
-                    </div> -->
-                <!-- </div><hr> -->
+                    </div>
+                </div><hr>
                
         </div>
     </div>

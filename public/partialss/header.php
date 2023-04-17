@@ -34,7 +34,11 @@
                 <div class="col-3">
                     <ul class="left_header">
                         <li>    
+<<<<<<< HEAD
                             <a class="login_signi" href="http://localhost:/Project_ct275/public/src/reg.php">Đăng ký</a>
+=======
+                            <a class="login_signi" href="http://localhost/ct275-project-Taib2014783/public/src/reg.php">Đăng ký</a>
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                             
                             <?php
                                 if(isset($_SESSION['user'])) {
@@ -45,7 +49,11 @@
                                     $sth->execute();
                                     if($sth == true) {
                                         $row = $sth->fetch();
+<<<<<<< HEAD
                                         echo "<a href='http://localhost:/Project_ct275/public/src/edit_user.php?id=$id'><p class='success' style='position: relative; top:10px;'>".$row['fullname']."</p></a>";         
+=======
+                                        echo "<a href='http://localhost/ct275-project-Taib2014783/public/src/edit_user.php?id=$id'><p class='success' style='position: relative; top:10px;'>".$row['fullname']."</p></a>";         
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                                     }else{
                                         echo "loi";
                                     }
@@ -54,11 +62,19 @@
                             
                         </li>
                         <li class="li">
+<<<<<<< HEAD
                             <a class="login_signi" href="http://localhost:/Project_ct275/public/src/login.php">Đăng nhập</a>
 
                                 <?php 
                                     if(isset($_SESSION['user'])) {
                                         $_SESSION['exit'] = "<a style='position: relative; top:10px;' href='http://localhost:/Project_ct275/public/src/logout.php'> Thoát </a>"; 
+=======
+                            <a class="login_signi" href="http://localhost/ct275-project-Taib2014783/public/src/login.php">Đăng nhập</a>
+
+                                <?php 
+                                    if(isset($_SESSION['user'])) {
+                                        $_SESSION['exit'] = "<a style='position: relative; top:10px;' href='http://localhost/ct275-project-Taib2014783/public/src/logout.php'> Thoát </a>"; 
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                                         echo $_SESSION['exit'];
                                         if($sth == true) {
                                             echo "<script>
@@ -77,7 +93,11 @@
                 <div class="col-3 d-flex justify-content-end">
                     <ul class="right_header">
                         <li>
+<<<<<<< HEAD
                             <a href="http://localhost:/Project_ct275/public/src/order_main.php" style="color: #0fa87a;">Đơn hàng <span>
+=======
+                            <a href="http://localhost/ct275-project-Taib2014783/public/src/order_main.php" style="color: #0fa87a;">Đơn hàng <span>
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                             </span></a>
                         </li>
                     </ul>
@@ -170,10 +190,17 @@
                 </div>
                 <div class="col-6">
                     <div class="search">
+<<<<<<< HEAD
                         <form action="http://localhost:/Project_ct275/public/src/search.php" method="POST" class="form-inline my-2 my-lg-0 ">
                             <input style="width: 240px;" class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search" name="search">
                         <!-- </form>
                         <form action="http://localhost:/Project_ct275/public/src/search.php" method="POST" class="btn-search"> -->
+=======
+                        <form action="http://localhost/ct275-project-Taib2014783/public/src/search.php" method="POST" class="form-inline my-2 my-lg-0 ">
+                            <input style="width: 240px;" class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search" name="search">
+                        <!-- </form>
+                        <form action="http://localhost/ct275-project-Taib2014783/public/src/search.php" method="POST" class="btn-search"> -->
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Tìm Kiếm</button></div>
                         </form>
                 </div>

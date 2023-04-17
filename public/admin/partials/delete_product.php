@@ -14,11 +14,19 @@
             $remove = unlink($path);
             if($remove == false) {
                 $_SESSION['delete_product'] = "<div class='error'> faile to remove product image</div>";
+<<<<<<< HEAD
                 echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/manager_product.php'</script>";
                 die();
             }else{
                 $_SESSION['delete_product'] = "<div class='success'>  removed susscesfully</div>";
                 echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/manager_product.php'</script>";
+=======
+                echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/manager_product.php'</script>";
+                die();
+            }else{
+                $_SESSION['delete_product'] = "<div class='success'>  removed susscesfully</div>";
+                echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/manager_product.php'</script>";
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
             }
         }else{
             echo "loi 0";

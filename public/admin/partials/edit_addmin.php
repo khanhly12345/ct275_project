@@ -1,7 +1,11 @@
 <?php include "component/header.php";
 if($_SESSION['role'] == 0) {
     $_SESSION['check_role'] = "<div class='error'>Only admins can add edit admin. </div>";
+<<<<<<< HEAD
     echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/admin.php'</script>";
+=======
+    echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/admin.php'</script>";
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
     die();
 }
 ?>
@@ -61,7 +65,11 @@ if($_SESSION['role'] == 0) {
                 ]);
                 if($sth) {
                     $_SESSION['edit_admin'] = "<div class='success'> Edit successfully. </div>";
+<<<<<<< HEAD
                     echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/admin.php'</script>";
+=======
+                    echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/admin.php'</script>";
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                 }
             }
         

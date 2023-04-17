@@ -2,7 +2,11 @@
 <?php 
     if(!isset($_SESSION['role']) || $_SESSION['role'] == 0) {
         $_SESSION['check_role'] = "<div class='error'>Only admins can add admin. </div>";
+<<<<<<< HEAD
         echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/admin.php'</script>";
+=======
+        echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/admin.php'</script>";
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
     }
 ?>
 <main class="main">
@@ -46,7 +50,11 @@
                 ]);
                 if($sth) {
                     $_SESSION['add_admin'] = "<div class='success'> Added successfully. </div>";
+<<<<<<< HEAD
                     echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/admin.php'</script>";
+=======
+                    echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/admin.php'</script>";
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                 }
             }
         

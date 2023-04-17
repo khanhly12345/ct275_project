@@ -11,5 +11,9 @@
                                             login_signin[0].classList.remove('exit');
                                             login_signin[1].classList.remove('exit');</script>";
                                             // include "../partialss/footer.php";  
+<<<<<<< HEAD
     echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/'</script>";
+=======
+    echo "<script>window.location = 'http://localhost/ct275-project-Taib2014783/public/src/'</script>";
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
 ?>

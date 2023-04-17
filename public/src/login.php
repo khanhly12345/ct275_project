@@ -47,7 +47,7 @@
                                 </div>
             
                                 <a style="text-decoration: none;" class="small text-muted" href="#!">Quên mật khẩu?</a>
-                                <p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn chưa có tài khoản? <a style="text-decoration: none;" href="/Project_ct275/public/src/reg.php"
+                                <p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn chưa có tài khoản? <a style="text-decoration: none;" href="/ct275-project-Taib2014783/public/src/reg.php"
                                     style="color: #393f81;">Đăng kí tại đây</a></p>
                                 <a style="text-decoration: none;" href="#!" class="small text-muted">Điều khoản sử dụng.</a>
                                 <a style="text-decoration: none;" href="#!" class="small text-muted">Chính sách bảo mật
@@ -65,11 +65,19 @@
                                         if($count > 0) {
                                             $_SESSION['check_login'] = "<div class='success'> Đăng nhập thành công </div>";
                                             $_SESSION['user'] = $row['id'];
+<<<<<<< HEAD
                                             // $_SESSION['exit'] = "<a style='position: relative; top:10px;' href='http://localhost:/Project_ct275/public/src/logout.php'> Thoát </a>"; 
                                             echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/'</script>"; 
                                         }else{
                                             $_SESSION['check_login'] = "<div class='error'> Tài khoản hoặc mật khẩu không đúng! </div>";
                                             echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/login.php'</script>";
+=======
+                                            // $_SESSION['exit'] = "<a style='position: relative; top:10px;' href='http://localhost/ct275-project-Taib2014783/public/src/logout.php'> Thoát </a>"; 
+                                            echo "<script>window.location = 'http://localhost/ct275-project-Taib2014783/public/src/'</script>"; 
+                                        }else{
+                                            $_SESSION['check_login'] = "<div class='error'> Tài khoản hoặc mật khẩu không đúng! </div>";
+                                            echo "<script>window.location = 'http://localhost/ct275-project-Taib2014783/public/src/login.php'</script>";
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                                         }
                                     }catch(PDOException $e) {
                                         echo $e->getMessage();

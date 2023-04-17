@@ -3,7 +3,11 @@
     // check user
     if(!isset($_SESSION['user'])) {
         $_SESSION['check_details'] = "<div class='error'>Bạn cần đăng nhập để xem chi tiết sản phẩm! </div>";
+<<<<<<< HEAD
         echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/login.php'</script>"; 
+=======
+        echo "<script>window.location = 'http://localhost/ct275-project-Taib2014783/public/src/login.php'</script>"; 
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
     }
 
 ?>
@@ -20,7 +24,11 @@
     </div>
     <div class="container" style="display: flex; justify-content: center;">
         <div class="row row-cart">
+<<<<<<< HEAD
             <form action="http://localhost:/Project_ct275/public/src/handle_order.php" method="POST">
+=======
+            <form action="http://localhost/ct275-project-Taib2014783/public/src/handle_order.php" method="POST">
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                 <div class="cart-details">
                     <?php 
                     // if(isset($_POST['submit'])) {
@@ -42,7 +50,11 @@
                             <div class="header-cart">
                                 <div class="img-cart" style="width: 20%">
                                     <img src="../admin/upload_img/product/<?php echo $row['img']?>" style="width: 80%;" alt="">
+<<<<<<< HEAD
                                     <a href="http://localhost:/Project_ct275/public/src/delete_cart.php?id=<?php echo $row['0']?>" style="text-decoration: none;">
+=======
+                                    <a href="http://localhost/ct275-project-Taib2014783/public/src/delete_cart.php?id=<?php echo $row['0']?>" style="text-decoration: none;">
+>>>>>>> cd13de17b841c3187a316c414c48aa1b44295431
                                         <div class="delete">X</div>
                                     </a>
                                 </div>
