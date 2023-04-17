@@ -19,7 +19,7 @@ if(isset($_GET['id'])) {
         $id
     ]);
     if($sth == true) {
-        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/cart.php'</script>";
+        echo "<script>window.location = 'http://localhost/ct275-project-Taib2014783/public/src/cart.php'</script>";
     }
 }
 ?>

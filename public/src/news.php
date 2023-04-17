@@ -35,62 +35,14 @@
                             <li><a href="">Xem thêm </a><i class="fa fa-angle-right fa-2x"></i></li>
                     </div>
                 </div> -->
-            <div class="row root">
-                <div class="col-4 col-intro">
-                        <a style="text-decoration: none ; color: black;" href="">Trang chủ</a> 
-                        <p class="text-news" style="color: #20c997; " href="">Tin tức</p>
-                    </div><hr>
-                    <p style="margin-left: 40px; font-weight: 500; font-size: x-large;">TIN TỨC</p><br>
-                </div>
 
-            <!-- <div class="col-12"> -->
-                <!-- <div class="col-4 col-intro">
+            <div class="col-12">
+                <div class="col-4 col-intro">
                     <a style="text-decoration: none ; color: black;" href="">Trang chủ</a> 
                     <p class="text-news" style="color: #20c997; " href="">Tin tức</p>
                 </div><hr>
-                <p style="margin-left: 40px; font-weight: 500; font-size: x-large;">TIN TỨC</p><br> -->
-                <script>
-                    fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=XSW5zMVC0tkBqj81Bcek5ftLGn2Cvr4k')
-                    .then(response => {
-                        return response.json();
-                    })
-                    .then(news => {
-                        // let div = document.getElementsByClassName("root")[0];
-                        // div.innerHTML += `<img src="`+news.results[0]['media'][0]['media-metadata'][2].url+`"/>`;
-                        let div = document.getElementsByClassName("root")[0];
-                        for(let i=0; i<9; i++ )  {
-                            div.innerHTML += `<div class="col-4">
-                            <a href="`+news.results[i].url+`"><img style="width: 400px; height: 210px;" src="` + news.results[i]['media'][0]['media-metadata'][2].url +`" alt=""></a><br><br>
-                            <p><a style="text-decoration: none; color: rgb(0, 0, 0);" href=""></a></p>
-                            <p style="font-size: small;">The leaked documents come as Ukraine has been preparing for a spring offensive as part of an effort to reclaim territory in the east and the south of the country.</p>
-                            <p style="font-size: small;">`+news.results[i].updated+`</p>
-                            <a href="`+news.results[i].url+`" class="btn btn-primary">Đọc Tiếp</a>
-                            </div>`
-                        }
-                        
-                    })
-                </script>
-                <!-- <script>
-                fetch('https://newsapi.org/v2/everything?q=tesla&from=2023-03-06&sortBy=publishedAt&apiKey=6f27c3ce003645d489b3fc30bd801ed5')
-                    .then(response => {
-                        return response.json();
-                    })
-                    .then(news => {
-                        let div = document.getElementsByClassName("root")[0];
-                        for(let i=0; i<9; i++ )  {
-                            div.innerHTML += `<div class="col-4">
-                            <a href="` + news.articles[i].url +`"><img style="width: 400px; height: 210px;" src="` + news.articles[i].urlToImage +`" alt=""></a><br><br>
-                            <p><a style="text-decoration: none; color: rgb(0, 0, 0);" href="">`+ news.articles[i].author+`</a></p>
-                            <p style="font-size: small;">Trong các tuần lễ thời trang, ngoài thời trang của các sao là vấn đề gây chú ý thì thời trang của các fashionista cũng là một chủ đề được...</p>
-                            <p style="font-size: small;">`+ news.articles[i].publishedAt+`</p>
-                            <button class="btn-news" style="position: relative; top: -5px"><p style="font-size: small;margin-top: 15px;">Đọc tiếp</p></button>
-                            </div>`
-                        }
-                        
-                        
-                    })
-                </script> -->
-                <!-- <div class="row row-news">
+                <p style="margin-left: 40px; font-weight: 500; font-size: x-large;">TIN TỨC</p><br>
+                <div class="row row-news">
                     <div class="col-4">
                         <a href=""><img style="width: 400px; height: 210px;" src="../images/img_news/thoi-trang-tham-hoa.webp" alt=""></a><br><br>
                         <p><a style="text-decoration: none; color: rgb(0, 0, 0);" href="">Khi thời trang là thảm họa thì sẽ như thế nào ?</a></p>
@@ -131,8 +83,8 @@
                     </div>
                     <div class="col-4">
                         
-                    </div> -->
-                <!-- </div><hr> -->
+                    </div>
+                </div><hr>
                
         </div>
     </div>
