@@ -81,14 +81,14 @@
                         $upload = move_uploaded_file($src, $dst);
                         if ($upload == false) {
                             $_SESSION['upload'] = "<div class='error'> Failed Upload Image. </div>";
-                            echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/manager_product.php'</script>";
+                            echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/manager_product.php'</script>";
                             die();
                         }
                         $remove_path = "../upload_img/product/".$current_img;
                         $remove = unlink($remove_path);
                         if($remove == false) {
                             $_SESSION['failed-remove'] = "<div class='error'> Failed Upload Image. </div>";
-                            echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/manager_product.php'</script>";
+                            echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/manager_product.php'</script>";
                             die();
                         }
                     }else{
@@ -112,7 +112,7 @@
                 $sth2->execute([$_POST['id_product']]);
                 if($sth == true && $sth2) {
                     $_SESSION['update'] = "<div class='success'> Product Updated successfully. </div>";
-                    echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/manager_product.php'</script>";
+                    echo "<script>window.location = 'http://localhost:/ct275-project-Taib2014783/public/admin/partials/manager_product.php'</script>";
                 }
             }
         ?>

@@ -3,7 +3,7 @@
     // check user
     if(!isset($_SESSION['user'])) {
         $_SESSION['check_details'] = "<div class='error'>Bạn cần đăng nhập để xem chi tiết sản phẩm! </div>";
-        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/login.php'</script>"; 
+        echo "<script>window.location = 'http://localhost/ct275-project-Taib2014783/public/src/login.php'</script>"; 
     }
 
 ?>
@@ -33,76 +33,76 @@
                 ?>
                 <?php 
                     try{
-                        $user = $_SESSION['user'];
-                        $n = 0;
-                        $query = "SELECT * FROM ordered o join order_items o_i on o.id_order = o_i.id join users u on u.id = o_i.user_id where o_i.user_id = $user";
-                        $sth = $pdo->query($query);
-                        $sth->execute();
-                        $temp = 0;
-                        $total = 0;
-                        // print_r($row = $sth->fetch());
-                        while($row = $sth->fetch()) {
-                            if($temp != $row[1]) {
-                                $temp = $row[1];
-                                $n++;
-                            ?>
-                            <tr>
-                                <th scope="col">
-                                    <?php echo $n . '.'; ?>
-                                </th>
-                                <th>
-                                    <?php echo  'Tên: ' . $row['fullname'] . "<br>". 'SĐT: '. $row['phone'].'<br>'. 'Thành Phố: ' . $row['city'] . "<br>". 'Huyện: ' . $row['district']?>
-                                </th>
-                            <?php
-                                $query2 = "SELECT * FROM ordered o join order_items o_i on o.id_order = o_i.id join product p on p.id = o.id_product where o.id_order = $temp";  
-                                $sth2 = $pdo->query($query2);
-                                $sth2->execute();
-                                $temp2 = 0;
-                                while($row2 = $sth2->fetch()) {
-                                    $total = $row2['total'];
-                                    // $total = $total + ($row2['price'] * $row2['quantity']);
+                            $user = $_SESSION['user'];
+                            $n = 0;
+                            $query = "SELECT * FROM ordered o join users u on o.id_user = u.id where o.id_user = $user";
+                            $sth = $pdo->query($query);
+                            $sth->execute();
+                            $temp = 0;
+                            $total = 0;
+                            $count_user = $sth->rowCount();
+                            if($count_user == 0) {
+                                echo "<div class='error ' style='position: relative; left: 40%; margin: 20px 0 20px 0;'> giỏ hàng của bạn trống !</div>";
+                            }
+                            while($row = $sth->fetch()) {
+                                if($temp != $row['id_user']) {
+                                    $temp = $row['id_user'];
+                                    $n++;
                                 ?>
                                 <tr>
-                                    <th><img src="../admin/upload_img/product/<?php echo $row2['img']?>" style="width: 90px">
+                                    
+                                    <th colspan="6">
+                                        <?php echo  $n . '.' . 'Tên: ' . $row['fullname'] . "<br>". 'SĐT: '. $row['phone'].'<br>'. 'Thành Phố: ' . $row['city'] . "<br>". 'Huyện: ' . $row['district']?>
                                     </th>
-                                    <th style="width: 20%;">
-                                        <?php echo $row2['titte']?>
+                                <?php
+                                    $query2 = "SELECT * FROM ordered o join product p on o.id_product = p.id where o.id_user = $temp";  
+                                    $sth2 = $pdo->query($query2);
+                                    $sth2->execute();
+                                    $temp2 = 0;
+                                    while($row2 = $sth2->fetch()) {
+                                        $total = $total + ($row2['price'] * $row2['quantity']);
+                                    ?>
+                                    <tr>
+                                        <th><img src="../admin/upload_img/product/<?php echo $row2['img']?>" style="width: 90px">
+                                        </th>
+                                        <th style="width: 20%;">
+                                            <?php echo $row2['titte']?>
+                                        </th>
+                                        <th style="width: 10%;">
+                                            <?php echo $row2['size']?>
+                                        </th>
+                                        <th>
+                                            <?php echo currency_format($row2['price'])?>
+                                        </th>
+                                        <th>
+                                            <?php echo $row2['quantity']?>
+                                        </th>
+                                        <th>
+                                            <?php echo $row2['date']?>
+                                        </th>
+                                    </tr>
+                                    
+                            <?php   
+                            // while 2
+                                    }?>
+                             <!-- while 1 -->
+                                <tr>
+                                    <th colspan="5" style="color : red;">
+                                    Tổng:  <?php echo  currency_format($total)?>
                                     </th>
-                                    <th style="width: 10%;">
-                                        <?php echo $row2['size']?>
-                                    </th>
-                                    <th>
-                                        <?php echo currency_format($row2['price'])?>
-                                    </th>
-                                    <th>
-                                        <?php echo $row2['quantity']?>
-                                    </th>
-                                    <th>
-                                        <?php echo $row2['date']?>
-                                    </th>
+                                    <th><a href="http://localhost/ct275-project-Taib2014783/public/src/delete_order_main.php?id=<?php echo $row['id_user']?>" style="text-decoration: none; position: relative; left: 100px;" class="btn btn-primary">Hủy đơn hàng</a></th>
                                 </tr>
-                                
-                        <?php   
-                        // while 2
-                                }?>
-                         <!-- while 1 -->
                             <tr>
-                                <th colspan="5" style="color : red;">
-                                Tổng:  <?php echo  currency_format($total)?>
-                                </th>
-                                <th style="display: flex; justify-content: center;"><a href="delete_order_main.php?id=<?php echo $row[1]?>" style="text-decoration: none;" class="btn btn-primary">Xóa đơn hàng</a></th>
-                            </tr>
-                        <tr>
-                        <?php
-                            }
-                        ?>                           
                             <?php
-                        }
-                // try  
-                }
-                catch(PDOException $e){
-                    echo $e;    
-                }
+                                }
+                            ?>                           
+                                <?php
+                            }
+                    // try  
+                    }
+                    catch(PDOException $e){
+                        echo $e;    
+                    }
                     ?>
                 
                 

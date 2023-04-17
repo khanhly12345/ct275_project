@@ -63,7 +63,7 @@
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-white">Đăng ký</button>
                 </div>
 
-                <p class="text-center text-muted mb-0">Bạn đã có tài khoản? <a href="/Project_ct275/public/src/login.php"
+                <p class="text-center text-muted mb-0">Bạn đã có tài khoản? <a href="/ct275-project-Taib2014783/public/src/login.php"
                     class="fw-bold text-body"><u>Đăng nhập tại đây!</u></a></p>
 
               </form>
@@ -80,7 +80,7 @@
                       echo $same_password;
                       if($password != $same_password) {
                         $_SESSION['check_passwork'] = "<div class='error'> Hai mật khẩu không khớp! </div>";
-                        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/reg.php'</script>";
+                        echo "<script>window.location = 'http://localhost/ct275-project-Taib2014783/public/src/reg.php'</script>";
                       }else{
                         $query = "INSERT INTO users (account, password, fullname, phone, city, district) VALUES (?,?,?,?,?,?)";
                         $sth = $pdo->prepare($query);
@@ -94,7 +94,7 @@
                         ]);
                         if($sth == true) {
                           $_SESSION['check_passwork'] = "<div class='success'> Đăng ký thành công </div>";
-                          echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/reg.php'</script>";
+                          echo "<script>window.location = 'http://localhost/ct275-project-Taib2014783/public/src/reg.php'</script>";
                         }
                       }
                   }
