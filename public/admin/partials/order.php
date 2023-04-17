@@ -87,7 +87,7 @@
                                     <th colspan="4" style="color : red;">
                                     Tổng:  <?php echo  currency_format($total)?>
                                     </th>
-                                    <th><a href="http://localhost:8080/Project_ct275/public/admin/partials/delete_order.php?id=<?php echo $row['id_user']?>" style="text-decoration: none;" class="btn btn-primary">Xóa đơn hàng</a></th>
+                                    <th><a href="http://localhost:/ct275-project-Taib2014783/public/admin/partials/delete_order.php?id=<?php echo $row['id_user']?>" style="text-decoration: none;" class="btn btn-primary">Xóa đơn hàng</a></th>
                                 </tr>
                             <tr>
                             <?php
