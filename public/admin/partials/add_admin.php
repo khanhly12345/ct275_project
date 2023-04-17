@@ -2,7 +2,7 @@
 <?php 
     if(!isset($_SESSION['role']) || $_SESSION['role'] == 0) {
         $_SESSION['check_role'] = "<div class='error'>Only admins can add admin. </div>";
-        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/admin.php'</script>";
+        echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/admin.php'</script>";
     }
 ?>
 <main class="main">
@@ -46,7 +46,7 @@
                 ]);
                 if($sth) {
                     $_SESSION['add_admin'] = "<div class='success'> Added successfully. </div>";
-                    echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/admin.php'</script>";
+                    echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/admin.php'</script>";
                 }
             }
         

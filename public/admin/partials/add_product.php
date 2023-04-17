@@ -72,7 +72,7 @@
             $upload = move_uploaded_file($src, $des);
             if($upload == false) {
               $_SESSION['upload'] = "<div class='error'> Failed Upload Image. </div>";
-              echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/add_product.php'</script>";
+              echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/add_product.php'</script>";
             }else{
               try{
                 $query = "INSERT INTO product (id_product, img, titte, price, type) VALUES (?,?,?,?,?)";
@@ -95,10 +95,10 @@
                 ]);
                 if($sth == true) {
                   $_SESSION['add'] = "<div class='success'> Product Added successfully. </div>";
-                  echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/manager_product.php'</script>";
+                  echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/manager_product.php'</script>";
                 }else{
                   $_SESSION['add'] = "<div class='error'> Failed to add product. </div>";
-                  echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/add_product.php'</script>";
+                  echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/add_product.php'</script>";
                 }
               }catch(PDOException $e){
                 echo $e->getMessage();

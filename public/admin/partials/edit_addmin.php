@@ -1,7 +1,7 @@
 <?php include "component/header.php";
 if($_SESSION['role'] == 0) {
     $_SESSION['check_role'] = "<div class='error'>Only admins can add edit admin. </div>";
-    echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/admin.php'</script>";
+    echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/admin.php'</script>";
     die();
 }
 ?>
@@ -61,7 +61,7 @@ if($_SESSION['role'] == 0) {
                 ]);
                 if($sth) {
                     $_SESSION['edit_admin'] = "<div class='success'> Edit successfully. </div>";
-                    echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/admin.php'</script>";
+                    echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/admin.php'</script>";
                 }
             }
         

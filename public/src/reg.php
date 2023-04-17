@@ -80,7 +80,7 @@
                       echo $same_password;
                       if($password != $same_password) {
                         $_SESSION['check_passwork'] = "<div class='error'> Hai mật khẩu không khớp! </div>";
-                        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/reg.php'</script>";
+                        echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/reg.php'</script>";
                       }else{
                         $query = "INSERT INTO users (account, password, fullname, phone, city, district) VALUES (?,?,?,?,?,?)";
                         $sth = $pdo->prepare($query);
@@ -94,7 +94,7 @@
                         ]);
                         if($sth == true) {
                           $_SESSION['check_passwork'] = "<div class='success'> Đăng ký thành công </div>";
-                          echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/reg.php'</script>";
+                          echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/reg.php'</script>";
                         }
                       }
                   }

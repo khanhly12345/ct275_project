@@ -3,7 +3,7 @@
     // check user
     if(!isset($_SESSION['user'])) {
         $_SESSION['check_details'] = "<div class='error'>Bạn cần đăng nhập để xem chi tiết sản phẩm! </div>";
-        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/login.php'</script>"; 
+        echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/login.php'</script>"; 
     }
 
 ?>
@@ -20,7 +20,7 @@
     </div>
     <div class="container" style="display: flex; justify-content: center;">
         <div class="row row-cart">
-            <form action="http://localhost:8080/Project_ct275/public/src/handle_order.php" method="POST">
+            <form action="http://localhost:/Project_ct275/public/src/handle_order.php" method="POST">
                 <div class="cart-details">
                     <?php 
                     // if(isset($_POST['submit'])) {
@@ -42,7 +42,7 @@
                             <div class="header-cart">
                                 <div class="img-cart" style="width: 20%">
                                     <img src="../admin/upload_img/product/<?php echo $row['img']?>" style="width: 80%;" alt="">
-                                    <a href="http://localhost:8080/Project_ct275/public/src/delete_cart.php?id=<?php echo $row['0']?>" style="text-decoration: none;">
+                                    <a href="http://localhost:/Project_ct275/public/src/delete_cart.php?id=<?php echo $row['0']?>" style="text-decoration: none;">
                                         <div class="delete">X</div>
                                     </a>
                                 </div>

@@ -2,7 +2,7 @@
 include "../connect.php";
 if(!isset($_SESSION['login'])) {
     $_SESSION['check_login'] = "<div class='error'>You need to login to access admin! </div>";
-    echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/login.php'</script>";
+    echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/login.php'</script>";
 }
 ?>
 <!DOCTYPE html>

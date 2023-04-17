@@ -18,7 +18,7 @@
     //     $query2 = "DELETE FROM cart WHERE id_user=$id_user";
     //     $sth2 = $pdo->query($query2);
     //     $sth2->execute();
-    //     echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/cart.php'</script>";
+    //     echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/cart.php'</script>";
     // }
 ?>
 
@@ -65,7 +65,7 @@
         $query5 = "DELETE FROM cart WHERE id_user=$id_user";
         $sth5 = $pdo->query($query5);
         $sth5->execute();
-        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/cart.php'</script>";
+        echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/cart.php'</script>";
         
     }
     

@@ -12,7 +12,7 @@
         $sth2->execute();
         if($sth2 == true and $sth == true) {
             $_SESSION['delete_order'] = "<div class='success'>  removed susscesfully</div>"; 
-            echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/order.php'</script>";
+            echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/order.php'</script>";
         }
     }
 ?>

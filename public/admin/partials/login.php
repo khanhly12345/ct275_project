@@ -47,10 +47,10 @@
                 $_SESSION['role'] = $row['role'];
                 $_SESSION['check_admin'] = $row['id'];
                 echo $_SESSION['role'];
-                echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/dashboard.php'</script>";
+                echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/dashboard.php'</script>";
             }else{
                 $_SESSION['login'] = "<div class='error'> The account and password not correct! </div>";
-                echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/admin/partials/login.php'</script>";
+                echo "<script>window.location = 'http://localhost:/Project_ct275/public/admin/partials/login.php'</script>";
             }
         }
     ?>

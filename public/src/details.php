@@ -3,7 +3,7 @@
     // check user
     if(!isset($_SESSION['user'])) {
         $_SESSION['check_details'] = "<div class='error'>Bạn cần đăng nhập để xem chi tiết sản phẩm! </div>";
-        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/login.php'</script>"; 
+        echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/login.php'</script>"; 
     }
 
 ?>
@@ -99,7 +99,7 @@
                                     $sth2 = $pdo->query($query2);
                                     $count = $sth2->rowCount();
                                     if($count > 0) {
-                                        echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/cart.php'</script>";
+                                        echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/cart.php'</script>";
                                         die();
                                     }
                                     try{
@@ -113,7 +113,7 @@
                                             $quantity
                                         ]);
                                         if($sth == true) {
-                                            echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/cart.php'</script>";
+                                            echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/cart.php'</script>";
                                         }
                                     }catch(PDOException $e){
                                         echo $e->getMessage();

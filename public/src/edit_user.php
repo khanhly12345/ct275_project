@@ -65,7 +65,7 @@
                       $district
                     ]);
                     if($sth == true) {
-                      echo "<script>window.location = 'http://localhost:8080/Project_ct275/public/src/'</script>";
+                      echo "<script>window.location = 'http://localhost:/Project_ct275/public/src/'</script>";
                     }
                 }
               ?>
